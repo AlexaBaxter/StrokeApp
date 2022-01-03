@@ -6,4 +6,63 @@
     android:layout_height="match_parent"
     tools:context=".PhysicalActivity">
 
+    <Button
+        android:id="@+id/HomeButtonP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:text="Home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="250dp">
+
+        <TextView
+            android:id="@+id/titlePhysical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Physical Rehab"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/chooseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Choose focus area:" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/armButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arm strength" />
+
+            <Button
+                android:id="@+id/walkingButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
+                android:text="Walking" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

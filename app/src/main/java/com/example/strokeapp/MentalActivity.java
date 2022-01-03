@@ -27,7 +27,7 @@ public class MentalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mental);
 
-        homeButton = (Button) findViewById(R.id.HomeButton);
+        homeButton = (Button) findViewById(R.id.HomeButtonP);
         homeButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
