@@ -34,7 +34,7 @@ public class PhysicalActivity extends AppCompatActivity {
         });
 
         walkButton = (Button) findViewById(R.id.walkingButton);
-        homeButton.setOnClickListener(new View.OnClickListener(){
+        walkButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PhysicalActivity.this, WalkingActivity.class);

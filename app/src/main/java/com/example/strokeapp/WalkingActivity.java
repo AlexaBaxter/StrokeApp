@@ -30,7 +30,7 @@ public class WalkingActivity extends AppCompatActivity {
         });
 
         backButton = (Button) findViewById(R.id.backButtonW);
-        homeButton.setOnClickListener(new View.OnClickListener(){
+        backButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(WalkingActivity.this, PhysicalActivity.class);
