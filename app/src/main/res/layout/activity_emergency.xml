@@ -6,4 +6,303 @@
     android:layout_height="match_parent"
     tools:context=".EmergencyActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="16dp"
+            android:text="Home" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:gravity="center"
+            android:text="Emergency Contacts"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/contactsTitleLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/addButton2"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@color/purple_500"
+                android:text="Add New Contact"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/editButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:background="@color/purple_500"
+                android:text="Edit" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="230dp"
+            android:layout_marginLeft="230dp"
+            android:layout_marginTop="40dp"
+            android:layout_weight="1"
+            android:text="Call" />
+
+        <RelativeLayout
+            android:id="@+id/contactsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/contactText1"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="Ambulance"
+                android:textColor="#673AB7" />
+
+            <TextView
+                android:id="@+id/contactText2"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/contactText1"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="Doctor"
+                android:textColor="#673AB7" />
+
+            <TextView
+                android:id="@+id/contactText3"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/contactText2"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="Nurse"
+                android:textColor="#673AB7" />
+
+            <TextView
+                android:id="@+id/contactText4"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/contactText3"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="contact1"
+                android:textColor="#673AB7" />
+
+            <TextView
+                android:id="@+id/contactText5"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/contactText4"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="contact2"
+                android:textColor="#673AB7" />
+
+            <TextView
+                android:id="@+id/contactText6"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/contactText5"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="contact3"
+                android:textColor="#673AB7" />
+
+            <EditText
+                android:id="@+id/phone1"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/contactText1"
+                android:ems="10"
+                android:inputType="phone"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/phone2"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/phone1"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/contactText2"
+                android:ems="10"
+                android:inputType="phone"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/phone3"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/phone2"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/contactText3"
+                android:ems="10"
+                android:inputType="phone"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/phone4"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/phone3"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/contactText4"
+                android:ems="10"
+                android:inputType="phone"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/phone5"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/phone4"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/contactText5"
+                android:ems="10"
+                android:inputType="phone"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/phone6"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/phone5"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/contactText6"
+                android:ems="10"
+                android:inputType="phone"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/phoneT4"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/contactText3"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:gravity="center"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/phoneT5"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/phoneT4"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:gravity="center"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/phoneT6"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/phoneT5"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:gravity="center"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/phoneB1"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/contactText1"
+                android:background="@color/purple_500"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/phoneB2"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/phoneB1"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/contactText2"
+                android:background="@color/purple_500"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/phoneB3"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/phoneB2"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/contactText3"
+                android:background="@color/purple_500"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/phoneB4"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/phoneB3"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/contactText4"
+                android:background="@color/purple_500"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/phoneB5"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/phoneB4"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/contactText5"
+                android:background="@color/purple_500"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/phoneB6"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/phoneB5"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/contactText6"
+                android:background="@color/purple_500"
+                android:text="Button" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
