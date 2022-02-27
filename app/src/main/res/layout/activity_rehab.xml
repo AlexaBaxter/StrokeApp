@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    android:background="#FFEBE4"
+    tools:context=".RehabActivity">
 
     <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/logo2"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="15dp"
@@ -31,7 +31,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
             android:fontFamily="@font/tenorsans"
-            android:text="HomeHeal"
+            android:text="Rehab"
+            android:textColor="@color/coral"
             android:textSize="45sp"
             android:textStyle="bold" />
 
@@ -41,22 +42,23 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/EmergencyButton"
+                android:id="@+id/PhysicalButton"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
+                android:background="#FFEFE5"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/call" />
+                app:srcCompat="@drawable/physbutton" />
 
             <ImageButton
-                android:id="@+id/MentalHealthButton"
+                android:id="@+id/CognitiveButton"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
+                android:background="#FFEFE5"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/mental" />
+                app:srcCompat="@drawable/cogbutton" />
+
         </LinearLayout>
     </LinearLayout>
 
@@ -79,7 +81,7 @@
                 android:background="@color/lightBlue"
                 android:scaleType="fitCenter"
                 android:tint="#0003A9F4"
-                app:srcCompat="@drawable/homew" />
+                app:srcCompat="@drawable/homeb" />
 
             <ImageButton
                 android:id="@+id/ProfileButton"
@@ -106,10 +108,9 @@
                 android:layout_weight="1"
                 android:background="@color/lightBlue"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/rehabb" />
+                app:srcCompat="@drawable/rehabw" />
 
         </LinearLayout>
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

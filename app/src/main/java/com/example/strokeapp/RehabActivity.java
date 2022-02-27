@@ -7,18 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class MainActivity extends AppCompatActivity {
-
-    public ImageButton rehabButton, homeButton, profileButton, calendarButton, mentalButton, emergencyButton;
+public class RehabActivity extends AppCompatActivity {
+    public ImageButton rehabButton, homeButton, profileButton, calendarButton, physButton, cogButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_rehab);
         initializeButtons();
-
-
     }
 
     public void initializeButtons()
@@ -27,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         homeButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                Intent intent = new Intent(RehabActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -36,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         rehabButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, RehabActivity.class);
+                Intent intent = new Intent(RehabActivity.this, RehabActivity.class);
                 startActivity(intent);
             }
         });
@@ -45,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         profileButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                Intent intent = new Intent(RehabActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });
@@ -54,24 +50,25 @@ public class MainActivity extends AppCompatActivity {
         calendarButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
-                startActivity(intent);
-            }
-        });
-        mentalButton = (ImageButton) findViewById(R.id.MentalHealthButton);
-        mentalButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MentalActivity.class);
+                Intent intent = new Intent(RehabActivity.this, CalendarActivity.class);
                 startActivity(intent);
             }
         });
 
-        emergencyButton = (ImageButton) findViewById(R.id.EmergencyButton);
-        emergencyButton.setOnClickListener(new View.OnClickListener(){
+        physButton = (ImageButton) findViewById(R.id.PhysicalButton);
+        physButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, EmergencyActivity.class);
+                Intent intent = new Intent(RehabActivity.this, PhysicalActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cogButton = (ImageButton) findViewById(R.id.CognitiveButton);
+        cogButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RehabActivity.this, CognitiveActivity.class);
                 startActivity(intent);
             }
         });
