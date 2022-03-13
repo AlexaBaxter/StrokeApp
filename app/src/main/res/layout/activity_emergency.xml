@@ -6,31 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".EmergencyActivity">
 
+    <ImageView
+        android:id="@+id/logo6"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/strokelogo" />
+
+    <ImageButton
+        android:id="@+id/homeButtonE"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homebackwhite" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <Button
-            android:id="@+id/homeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="16dp"
-            android:text="Home" />
+        app:layout_constraintTop_toBottomOf="@+id/homeButtonE">
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/tenorsans"
             android:gravity="center"
             android:text="Emergency Contacts"
             android:textAllCaps="false"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textColor="@color/blue"
+            android:textSize="36sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:id="@+id/contactsTitleLayout"
@@ -41,22 +57,24 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/addButton2"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:background="@color/purple_500"
-                android:text="Add New Contact"
-                android:textSize="12sp" />
-
-            <Button
                 android:id="@+id/editButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:background="@color/purple_500"
-                android:text="Edit" />
+                android:text="Edit"
+                app:backgroundTint="@color/coral" />
+
+            <Button
+                android:id="@+id/addButton2"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@color/lightBlue"
+                android:text="Add New Contact"
+                android:textSize="12sp"
+                app:backgroundTint="@color/lightBlue" />
 
         </LinearLayout>
 
@@ -64,11 +82,14 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="230dp"
-            android:layout_marginLeft="230dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
             android:layout_marginTop="40dp"
             android:layout_weight="1"
-            android:text="Call" />
+            android:fontFamily="@font/tenorsans"
+            android:text="Click to Call"
+            android:textAllCaps="true"
+            android:textStyle="bold" />
 
         <RelativeLayout
             android:id="@+id/contactsLayout"
@@ -85,7 +106,7 @@
                 android:fontFamily="sans-serif"
                 android:gravity="center"
                 android:text="Ambulance"
-                android:textColor="#673AB7" />
+                android:textColor="@color/coral" />
 
             <TextView
                 android:id="@+id/contactText2"
@@ -97,7 +118,7 @@
                 android:fontFamily="sans-serif"
                 android:gravity="center"
                 android:text="Doctor"
-                android:textColor="#673AB7" />
+                android:textColor="@color/coral" />
 
             <TextView
                 android:id="@+id/contactText3"
@@ -109,7 +130,7 @@
                 android:fontFamily="sans-serif"
                 android:gravity="center"
                 android:text="Nurse"
-                android:textColor="#673AB7" />
+                android:textColor="@color/coral" />
 
             <TextView
                 android:id="@+id/contactText4"
@@ -155,6 +176,7 @@
                 android:layout_toEndOf="@id/contactText1"
                 android:ems="10"
                 android:inputType="phone"
+                android:shadowColor="#CFC3C3"
                 android:textSize="12sp" />
 
             <EditText
@@ -220,6 +242,8 @@
                 android:layout_marginBottom="10dp"
                 android:ems="10"
                 android:gravity="center"
+                android:textColor="@color/coral"
+                android:textColorHint="@color/coral"
                 android:textSize="12sp" />
 
             <EditText
@@ -230,6 +254,7 @@
                 android:layout_marginBottom="10dp"
                 android:ems="10"
                 android:gravity="center"
+                android:textColor="@color/coral"
                 android:textSize="12sp" />
 
             <EditText
@@ -240,6 +265,7 @@
                 android:layout_marginBottom="10dp"
                 android:ems="10"
                 android:gravity="center"
+                android:textColor="@color/coral"
                 android:textSize="12sp" />
 
             <Button
@@ -248,8 +274,9 @@
                 android:layout_height="40dp"
                 android:layout_marginBottom="10dp"
                 android:layout_toEndOf="@id/contactText1"
-                android:background="@color/purple_500"
-                android:text="Button" />
+                android:background="@color/lightBlue"
+                android:text="Button"
+                app:backgroundTint="@color/blue" />
 
             <Button
                 android:id="@+id/phoneB2"
@@ -258,8 +285,9 @@
                 android:layout_below="@id/phoneB1"
                 android:layout_marginBottom="10dp"
                 android:layout_toEndOf="@id/contactText2"
-                android:background="@color/purple_500"
-                android:text="Button" />
+                android:background="@color/lightBlue"
+                android:text="Button"
+                app:backgroundTint="@color/blue" />
 
             <Button
                 android:id="@+id/phoneB3"
@@ -268,8 +296,9 @@
                 android:layout_below="@id/phoneB2"
                 android:layout_marginBottom="10dp"
                 android:layout_toEndOf="@+id/contactText3"
-                android:background="@color/purple_500"
-                android:text="Button" />
+                android:background="@color/lightBlue"
+                android:text="Button"
+                app:backgroundTint="@color/blue" />
 
             <Button
                 android:id="@+id/phoneB4"
@@ -278,8 +307,9 @@
                 android:layout_below="@+id/phoneB3"
                 android:layout_marginBottom="10dp"
                 android:layout_toEndOf="@+id/contactText4"
-                android:background="@color/purple_500"
-                android:text="Button" />
+                android:background="@color/lightBlue"
+                android:text="Button"
+                app:backgroundTint="@color/blue" />
 
             <Button
                 android:id="@+id/phoneB5"
@@ -288,8 +318,9 @@
                 android:layout_below="@+id/phoneB4"
                 android:layout_marginBottom="10dp"
                 android:layout_toEndOf="@+id/contactText5"
-                android:background="@color/purple_500"
-                android:text="Button" />
+                android:background="@color/lightBlue"
+                android:text="Button"
+                app:backgroundTint="@color/blue" />
 
             <Button
                 android:id="@+id/phoneB6"
@@ -298,8 +329,10 @@
                 android:layout_below="@+id/phoneB5"
                 android:layout_marginBottom="10dp"
                 android:layout_toEndOf="@+id/contactText6"
-                android:background="@color/purple_500"
-                android:text="Button" />
+                android:background="@color/lightBlue"
+                android:text="Button"
+                android:textColorHint="@color/white"
+                app:backgroundTint="@color/blue" />
 
         </RelativeLayout>
 

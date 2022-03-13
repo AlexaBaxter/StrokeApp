@@ -18,6 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal|center_vertical"
@@ -61,6 +62,51 @@
                 android:layout_weight="1"
                 android:text="Walking" />
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:id="@+id/HomeButton"
+            android:layout_width="175dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@color/lightBlue"
+            android:scaleType="fitCenter"
+            android:tint="#0003A9F4"
+            app:srcCompat="@drawable/homew" />
+
+        <ImageButton
+            android:id="@+id/ProfileButton"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@color/lightBlue"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/profileb" />
+
+        <ImageButton
+            android:id="@+id/CalendarButton"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@color/lightBlue"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/calendarb" />
+
+        <ImageButton
+            android:id="@+id/RehabButton"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@color/lightBlue"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/rehabb" />
 
     </LinearLayout>
 
