@@ -13,6 +13,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -40,6 +41,8 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
         createNotificationChannel();
+
+        initializeButtons();
 
         manager = TasksManager.getInstance();
         manager.initialize(getApplicationContext());
@@ -92,6 +95,33 @@ public class CalendarActivity extends AppCompatActivity {
                 tasksTitle.setText("Tasks for today (" + dateSelected + "):");
             else tasksTitle.setText("Tasks for " + dateSelected + ":");
             showTasks();
+        });
+    }
+
+    public void initializeButtons()
+    {
+        ImageButton homeButton = findViewById(R.id.HomeButtonC);
+        homeButton.setOnClickListener(view -> {
+            Intent intent = new Intent(CalendarActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
+        ImageButton rehabButton = findViewById(R.id.RehabButtonC);
+        rehabButton.setOnClickListener(view -> {
+            Intent intent = new Intent(CalendarActivity.this, RehabActivity.class);
+            startActivity(intent);
+        });
+
+        ImageButton profileButton = findViewById(R.id.ProfileButtonC);
+        profileButton.setOnClickListener(view -> {
+            Intent intent = new Intent(CalendarActivity.this, ProfileActivity.class);
+            startActivity(intent);
+        });
+
+        ImageButton calendarButton = findViewById(R.id.CalendarButtonC);
+        calendarButton.setOnClickListener(view -> {
+            Intent intent = new Intent(CalendarActivity.this, CalendarActivity.class);
+            startActivity(intent);
         });
     }
 

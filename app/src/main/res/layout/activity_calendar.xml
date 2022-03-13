@@ -37,11 +37,12 @@
             android:id="@+id/calendarText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/lovelo"
+            android:fontFamily="@font/tenorsans"
             android:gravity="center"
             android:text="Calendar"
             android:textColor="#5CACAF"
-            android:textSize="24sp" />
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView"
@@ -63,10 +64,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/lovelo"
+            android:fontFamily="@font/tenorsans"
             android:text="Today's Tasks"
             android:textColor="@color/calendar_dark"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tasksSubText"
