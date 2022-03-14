@@ -5,54 +5,104 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EFF6FA"
-    tools:context=".CognitiveActivity">
+    tools:context=".SpeechSoundActicity">
 
     <TextView
-        android:id="@+id/title1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/tenorsans"
-        android:text="Cognitive Activity"
-        android:textColor="@color/lightBlue"
-        android:textSize="35sp"
+        android:id="@+id/soundTitle"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@color/lightGrey"
+        android:layout_marginTop="220dp"
+        android:textSize="30sp"
         android:textStyle="bold"
+        android:fontFamily="@font/sarabun"
+        android:text="work"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/speechB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Speech Exercises"
+        android:id="@+id/speakB"
+        android:layout_width="95dp"
+        android:layout_height="43dp"
+        android:fontFamily="@font/sarabun"
         android:backgroundTint="@color/lightBlue"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Speak"
+        app:layout_constraintEnd_toStartOf="@+id/soundTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/memoryB"
+        android:id="@+id/nextB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:backgroundTint="@color/lightBlue"
-        android:text="Memory Exercises"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/speechB" />
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/sarabun"
+        android:layout_marginTop="50dp"
+        android:text="Next"
+        app:layout_constraintStart_toEndOf="@+id/speakB"
+        app:layout_constraintTop_toBottomOf="@+id/soundTitle" />
 
     <Button
-        android:id="@+id/locB"
+        android:id="@+id/settingsB"
+        android:backgroundTint="@color/lightBlue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="@color/lightBlue"
-        android:text="Location Reminder"
+        android:fontFamily="@font/sarabun"
+        android:text="Settings"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/memoryB" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBoxR"
+        android:layout_width="139dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:text="R Sounds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsB" />
+
+    <CheckBox
+        android:id="@+id/checkBoxTh"
+        android:layout_width="139dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:text="Th Sounds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxR" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSh"
+        android:layout_width="139dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:text="Sh Sounds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxTh" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCh"
+        android:layout_width="139dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:text="Ch Sounds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxSh" />
+
+    <CheckBox
+        android:id="@+id/checkBoxS"
+        android:layout_width="139dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:text="S Sounds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxCh" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

@@ -9,11 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StrokeApp">
-        <activity android:name=".RehabActivity"></activity>
+
+        <activity android:name=".LocationActivity"></activity>
+        <activity android:name=".RehabActivity" />
         <activity android:name=".WalkingActivity" />
         <activity android:name=".ArmActivity" />
         <activity android:name=".EmergencyActivity" />
         <activity android:name=".MentalActivity" />
+        <activity android:name=".SpeechSoundActicity" />
+        <activity android:name=".SpeechActivity" />
         <activity android:name=".CalendarActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".MemoryActivity" />
