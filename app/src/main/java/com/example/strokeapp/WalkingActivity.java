@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,9 +25,11 @@ public class WalkingActivity extends AppCompatActivity {
 
     private ImageView image1, image2, image3;
 
-    private Button level1Button, level2Button, homeButton;
+    private Button level1Button, level2Button;
 
     private int level = 1;
+
+    public ImageButton rehabButton, homeButton, profileButton, calendarButton, mentalButton, emergencyButton;
 
     private String[][] tasks = {{"Knee extensions: Extend one leg until its parallel to the ground. Then, slowly lower your foot back down. Repeat 10 times on each leg (alternating).",
     "Seated marching: Lift leg up to chest, then put it back down. Repeat 10 times on each leg (alternating).",
@@ -61,19 +64,11 @@ public class WalkingActivity extends AppCompatActivity {
 
         level1Button = (Button)findViewById(R.id.lv1Button);
         level2Button = (Button)findViewById(R.id.lvl2Button);
-        homeButton = (Button) findViewById(R.id.HomeButtonW);
 
         SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         selectLevel(sharedPref.getInt("level",1), sharedPref);
 
-        homeButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(WalkingActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
         exc1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -171,5 +166,60 @@ public class WalkingActivity extends AppCompatActivity {
             star3.setImageResource(R.drawable.filledstar);
             exc3.setChecked(true);
         }
+    }
+    public void initializeButtons()
+    {
+        homeButton = (ImageButton) findViewById(R.id.HomeButton);
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WalkingActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        rehabButton = (ImageButton) findViewById(R.id.RehabButton);
+        rehabButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WalkingActivity.this, RehabActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        profileButton = (ImageButton) findViewById(R.id.ProfileButton);
+        profileButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WalkingActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        calendarButton = (ImageButton) findViewById(R.id.CalendarButton);
+        calendarButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WalkingActivity.this, CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
+        mentalButton = (ImageButton) findViewById(R.id.MentalHealthButton);
+        mentalButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WalkingActivity.this, MentalActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        emergencyButton = (ImageButton) findViewById(R.id.EmergencyButton);
+        emergencyButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WalkingActivity.this, EmergencyActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

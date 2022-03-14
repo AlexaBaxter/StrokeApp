@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="medsColor">#FFDCC1FF</color>
+    <color name="cogColor">#FFFFB7F8</color>
+    <color name="physColor">#FF82FF9D</color>
+    <color name="apptColor">#FFFDFF9D</color>
+    <color name="mentColor">#FFABDFFD</color>
+    <color name="otherColor">#FFFFCC81</color>
+    <color name="noTasks">#F8F8F8</color>
+    <color name="calendar_dark">#FF5CACAF</color>
+    <color name="calendar_bg">#DDF3F3</color>
+    <color name="calendar_light">#BFEFF1</color>
+</resources>

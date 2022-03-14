@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">StrokeApp</string>
+    <string-array name="repeat_array">
+        <item>never</item>
+        <item>daily</item>
+    </string-array>
+
+    <string-array name="notif_array">
+        <item>at scheduled time</item>
+        <item>10 min before</item>
+        <item>30 min before</item>
+        <item>1 hour before</item>
+        <item>1 day before</item>
+        <item>never</item>
+    </string-array>
+
+    <string name="channel_name">Notifications</string>
+    <string name="channel_description">Notifications for Tasks</string>
+
 </resources>

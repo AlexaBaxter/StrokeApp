@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    public ImageButton rehabButton, homeButton, profileButton, calendarButton, mentalButton, emergencyButton;
+    public ImageButton rehabButton, homeButton, profileButton, calendarButton, mentalButton, emergencyButton, memoryButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +72,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, EmergencyActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        memoryButton = (ImageButton) findViewById(R.id.MemoryButton);
+        emergencyButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MemoryActivity.class);
                 startActivity(intent);
             }
         });

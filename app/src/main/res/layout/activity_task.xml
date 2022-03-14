@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/calendar_bg"
+    tools:context=".TaskActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/nameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/nameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/lovelo"
+                android:text="Task Name:"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/enterName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:fontFamily="@font/sarabun"
+                android:gravity="center_horizontal"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/chooseCategoryText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sarabun"
+            android:text="Choose a category for your task:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:visibility="visible" />
+
+        <RadioGroup
+            android:id="@+id/categories"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:visibility="visible">
+
+            <RadioButton
+                android:id="@+id/medsRB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/medsColor"
+                android:buttonTint="@color/black"
+                android:fontFamily="@font/sarabun"
+                android:text="medications"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/cogRB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/cogColor"
+                android:buttonTint="@color/black"
+                android:fontFamily="@font/sarabun"
+                android:text="cognitive rehab"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/physRB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/physColor"
+                android:buttonTint="@color/black"
+                android:fontFamily="@font/sarabun"
+                android:text="physical rehab"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/appRB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/apptColor"
+                android:buttonTint="@color/black"
+                android:fontFamily="@font/sarabun"
+                android:text="appointments"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/mentalRB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/mentColor"
+                android:buttonTint="@color/black"
+                android:fontFamily="@font/sarabun"
+                android:text="mental health check-in"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/otherRB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/otherColor"
+                android:buttonTint="@color/black"
+                android:fontFamily="@font/sarabun"
+                android:text="other/personal event"
+                android:textSize="18sp" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cancelBtn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/lovelo"
+                android:text="Cancel"
+                android:textSize="18sp"
+                app:backgroundTint="#DD8E8E" />
+
+            <Button
+                android:id="@+id/nextTaskBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:fontFamily="@font/lovelo"
+                android:text="Next"
+                android:textSize="18sp"
+                app:backgroundTint="@color/calendar_dark" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

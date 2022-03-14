@@ -12,11 +12,13 @@ import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MentalActivity extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0 ;
-    Button homeButton, sendButton;
+    ImageButton homeButton;
+    Button sendButton;
     EditText txtPhoneNum;
     EditText txtMessage;
     String phoneNo;
@@ -27,7 +29,7 @@ public class MentalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mental);
 
-        homeButton = (Button) findViewById(R.id.HomeButtonP);
+        homeButton = (ImageButton) findViewById(R.id.HomeButtonM);
         homeButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

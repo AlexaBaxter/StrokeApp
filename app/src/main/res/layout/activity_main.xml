@@ -50,6 +50,15 @@
                 app:srcCompat="@drawable/call" />
 
             <ImageButton
+                android:id="@+id/MemoryButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/memoryaid" />
+
+            <ImageButton
                 android:id="@+id/MentalHealthButton"
                 android:layout_width="100dp"
                 android:layout_height="100dp"

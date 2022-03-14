@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +28,7 @@ public class EmergencyActivity extends AppCompatActivity {
     private Button editButton, addButton, phoneB1, phoneB2, phoneB3, phoneB4, phoneB5, phoneB6;
     private EditText phone1, phone2, phone3, phone4, phone5, phone6, phoneT4, phoneT5, phoneT6;
     private TextView contact4, contact5, contact6 ;
-    private Button homeB;
+    private ImageButton homeB;
     private boolean clicked=false;
     SharedPreferences phoneNums;
     SharedPreferences.Editor editor;
@@ -57,7 +58,7 @@ public class EmergencyActivity extends AppCompatActivity {
         phoneB5 = (Button) findViewById(R.id.phoneB5);
         phoneB6 = (Button) findViewById(R.id.phoneB6);
 
-        homeB = (Button) findViewById(R.id.homeButton);
+        homeB = (ImageButton) findViewById(R.id.homeButtonE);
 
         contact4 = (TextView) findViewById(R.id.contactText4);
         contact5 = (TextView) findViewById(R.id.contactText5);
