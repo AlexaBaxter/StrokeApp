@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         memoryButton = (ImageButton) findViewById(R.id.MemoryButton);
-        emergencyButton.setOnClickListener(new View.OnClickListener(){
+        memoryButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MemoryActivity.class);

@@ -26,7 +26,7 @@ public class MemoryActivity extends AppCompatActivity {
         });
 
         objectButton = (ImageButton) findViewById(R.id.objectButton);
-        homeButton.setOnClickListener(new View.OnClickListener(){
+        objectButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MemoryActivity.this, ObjectIdentifierActivity.class);
