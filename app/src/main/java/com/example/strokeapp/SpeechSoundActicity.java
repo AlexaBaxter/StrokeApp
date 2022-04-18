@@ -43,11 +43,11 @@ public class SpeechSoundActicity extends AppCompatActivity {
 
 
         sounds = new ArrayList<String>();
-        rSound = new String []{"run", "carrot", "rice", "rat", "bear", "four", "bird", "earring", "rake", "red", "arm", "iron"};
-        sSound = new String []{"sat"};
-        thSound = new String []{"think"};
-        chSound = new String []{"chat"};
-        shSound = new String []{"sharp"};
+        rSound = new String []{"run", "carrot", "rice", "rat", "bear", "four", "bird", "earring", "rake", "red", "arm", "iron", "rabbit", "lizard", "doctor", "rich", "party", "ladder"};
+        sSound = new String []{"sit", "soup", "face", "bus", "fossil", "save", "city", "beside", "nice", "dress", "soft", "son", "eraser", "lettuce"};
+        thSound = new String []{"think", "that", "the", "feather", "breathe", "scathe", "bathe", "mother", "either", "though", "thee", "themselves", "soothing"};
+        chSound = new String []{"chat", "chair", "chase", "check", "beach", "catcher", "couch", "pitch", "inches", "reach", "kitchen", "chin", "watch", "picture"};
+        shSound = new String []{"sharp", "shirt", "dishes", "brush", "addition", "bush", "short", "show", "flush", "washing", "rush", "tissue", "bush", "shake"};
         num = 0;
 
         title = (TextView) findViewById(R.id.soundTitle);

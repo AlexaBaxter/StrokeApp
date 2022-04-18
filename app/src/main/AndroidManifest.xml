@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StrokeApp">
-        <activity android:name=".ObjectIdentifierActivity"></activity>
+        <activity android:name=".WinCardActivity"></activity>
+        <activity android:name=".ObjectIdentifierActivity" />
         <activity android:name=".RehabActivity" />
         <activity android:name=".WalkingActivity" />
         <activity android:name=".ArmActivity" />
@@ -20,6 +21,11 @@
         <activity android:name=".CalendarActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".MemoryActivity" />
+        <activity android:name=".LocationActivity" />
+        <activity android:name=".MemoryGamesActivity" />
+        <activity android:name=".SpeechActivity" />
+        <activity android:name=".SpeechSoundActicity" />
+        <activity android:name=".CardGameActivity" />
         <activity android:name=".PhysicalActivity" />
         <activity android:name=".CognitiveActivity" />
         <activity android:name=".MainActivity">

@@ -12,7 +12,7 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:gravity="center"
-        android:background="@color/lightGrey"
+        android:background="@color/noTasks"
         android:layout_marginTop="220dp"
         android:textSize="30sp"
         android:textStyle="bold"

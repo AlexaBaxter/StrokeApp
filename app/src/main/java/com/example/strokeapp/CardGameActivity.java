@@ -2,12 +2,14 @@ package com.example.strokeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,9 +18,11 @@ import java.util.Collections;
 public class CardGameActivity extends AppCompatActivity {
 
     private ImageButton[] buttons;
-    private ImageButton homeButton, calendarButton, rehabButton, profileButton;
+    private ImageButton homeButton, calendarButton, rehabButton, profileButton, infoButton;
     private boolean [] flipped;
+    private boolean info;
     private int count;
+    private TextView howTo;
     private ArrayList<Integer> nums;
 
 
@@ -26,9 +30,9 @@ public class CardGameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_game);
-        /*buttons = new ImageButton [12];
+        buttons = new ImageButton [12];
         flipped = new boolean[12];
-
+        info = false;
 
         buttons[0] = (ImageButton) findViewById(R.id.b1);
         buttons[1] = (ImageButton) findViewById(R.id.b2);
@@ -42,7 +46,8 @@ public class CardGameActivity extends AppCompatActivity {
         buttons[9] = (ImageButton) findViewById(R.id.b10);
         buttons[10] = (ImageButton) findViewById(R.id.b11);
         buttons[11] = (ImageButton) findViewById(R.id.b12);
-        //reset();
+        howTo = (TextView) findViewById(R.id.howTo);
+        reset();
 
         homeButton = (ImageButton) findViewById(R.id.HomeButton);
         homeButton.setOnClickListener(new View.OnClickListener(){
@@ -79,24 +84,42 @@ public class CardGameActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-/*
+
+        infoButton = (ImageButton) findViewById(R.id.infoButton);
+        infoButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+               info=!info;
+               for(int i=0;i<12;i++) {
+                   if(info)
+                       buttons[i].setEnabled(false);
+                   else
+                      buttons[i].setEnabled(true);
+               }
+               if(info)
+                   howTo.setVisibility(View.VISIBLE);
+               else
+                   howTo.setVisibility(View.INVISIBLE);
+            }
+        });
+
         for(int i=0;i<12;i++) {
             int a = i;
             buttons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (nums.get(a) != 0 && count<2) {
-                        if(a<2)
+                        if(nums.get(a)==1)
                             buttons[a].setImageResource(R.drawable.card0);
-                        else if(a<4)
+                        else if(nums.get(a)==2)
                             buttons[a].setImageResource(R.drawable.card1);
-                        else if(a<6)
+                        else if(nums.get(a)==3)
                             buttons[a].setImageResource(R.drawable.card2);
-                        else if(a<8)
+                        else if(nums.get(a)==4)
                             buttons[a].setImageResource(R.drawable.card3);
-                        else if(a<10)
+                        else if(nums.get(a)==5)
                             buttons[a].setImageResource(R.drawable.card4);
-                        else
+                        else if(nums.get(a)==6)
                             buttons[a].setImageResource(R.drawable.card5);
                         flipped[a] = true;
                         if (count == 0) {
@@ -112,14 +135,17 @@ public class CardGameActivity extends AppCompatActivity {
                                     public void run() {
                                         unflip();
                                     }
-                                }, 1000);
+                                }, 500);
                             }
                             count = 0;
                             if (checkIfComplete()) {
                                 Handler handler = new Handler();
                                 handler.postDelayed(new Runnable() {
                                     public void run() {
-                                        reset();
+
+                                        Intent intent = new Intent(CardGameActivity.this, WinCardActivity.class);
+                                        startActivity(intent);
+                                       // reset();
                                     }
                                 }, 1000);
                             }
@@ -127,7 +153,7 @@ public class CardGameActivity extends AppCompatActivity {
                     }
                 }
             });
-        }*/
+        }
     }
 
     public boolean checkIfCorrect(){
@@ -178,5 +204,7 @@ public class CardGameActivity extends AppCompatActivity {
         for(int i=0;i<nums.size();i++) {
             buttons[i].setImageResource(R.drawable.cardback);
         }
+        howTo.setVisibility(View.INVISIBLE);
+        info = false;
     }
 }

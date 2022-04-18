@@ -8,22 +8,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class CognitiveActivity extends AppCompatActivity {
+public class WinCardActivity extends AppCompatActivity {
 
-    private Button speechButton, memoryButton, locB;
+    private Button playAgainButton;
     private ImageButton homeButton, calendarButton, rehabButton, profileButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cognitive);
+        setContentView(R.layout.activity_win_card);
 
 
         homeButton = (ImageButton) findViewById(R.id.HomeButton);
         homeButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CognitiveActivity.this, MainActivity.class);
+                Intent intent = new Intent(WinCardActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -32,7 +32,7 @@ public class CognitiveActivity extends AppCompatActivity {
         rehabButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CognitiveActivity.this, RehabActivity.class);
+                Intent intent = new Intent(WinCardActivity.this, RehabActivity.class);
                 startActivity(intent);
             }
         });
@@ -41,7 +41,7 @@ public class CognitiveActivity extends AppCompatActivity {
         profileButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CognitiveActivity.this, ProfileActivity.class);
+                Intent intent = new Intent(WinCardActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });
@@ -50,35 +50,16 @@ public class CognitiveActivity extends AppCompatActivity {
         calendarButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CognitiveActivity.this, CalendarActivity.class);
+                Intent intent = new Intent(WinCardActivity.this, CalendarActivity.class);
                 startActivity(intent);
             }
         });
 
-        speechButton = (Button) findViewById(R.id.speechB);
-        speechButton.setOnClickListener(new View.OnClickListener(){
+        playAgainButton = (Button) findViewById(R.id.againB);
+        playAgainButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(CognitiveActivity.this, SpeechActivity.class);
-                Intent intent = new Intent(CognitiveActivity.this, SpeechSoundActicity.class);
-                startActivity(intent);
-            }
-        });
-
-        memoryButton = (Button) findViewById(R.id.memoryB);
-        memoryButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(CognitiveActivity.this, CardGameActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        locB = (Button) findViewById(R.id.locB);
-        locB.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(CognitiveActivity.this, LocationActivity.class);
+                Intent intent = new Intent(WinCardActivity.this, CardGameActivity.class);
                 startActivity(intent);
             }
         });
