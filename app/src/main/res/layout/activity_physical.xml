@@ -4,32 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightPink"
     tools:context=".PhysicalActivity">
 
-    <Button
-        android:id="@+id/HomeButtonP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:text="Home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/logo2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/strokelogo" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="250dp">
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/titlePhysical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/tenorsans"
             android:text="Physical Rehab"
             android:textSize="36sp"
             android:textStyle="bold" />
@@ -39,50 +43,60 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Choose focus area:" />
+            android:fontFamily="@font/sarabun"
+            android:text="Choose focus area:"
+            android:textSize="25sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/armButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Arm strength" />
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/image_btn_coral"
+                android:scaleType="fitCenter"
+                android:tint="#FFFFFF"
+                app:srcCompat="@drawable/armstrength" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/walkingButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_weight="1"
-                android:text="Walking" />
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/image_btn_coral"
+                android:scaleType="fitCenter"
+                android:tint="#FFFFFF"
+                app:srcCompat="@drawable/walking" />
+
         </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageButton
-            android:id="@+id/HomeButton"
+            android:id="@+id/HomeButtonPR"
             android:layout_width="175dp"
             android:layout_height="100dp"
             android:layout_weight="1"
             android:background="@color/lightBlue"
             android:scaleType="fitCenter"
             android:tint="#0003A9F4"
-            app:srcCompat="@drawable/homew" />
+            app:srcCompat="@drawable/homeb" />
 
         <ImageButton
-            android:id="@+id/ProfileButton"
+            android:id="@+id/ProfileButtonPR"
             android:layout_width="180dp"
             android:layout_height="100dp"
             android:layout_weight="1"
@@ -91,7 +105,7 @@
             app:srcCompat="@drawable/profileb" />
 
         <ImageButton
-            android:id="@+id/CalendarButton"
+            android:id="@+id/CalendarButtonPR"
             android:layout_width="180dp"
             android:layout_height="100dp"
             android:layout_weight="1"
@@ -100,15 +114,28 @@
             app:srcCompat="@drawable/calendarb" />
 
         <ImageButton
-            android:id="@+id/RehabButton"
+            android:id="@+id/RehabButtonPR"
             android:layout_width="180dp"
             android:layout_height="100dp"
             android:layout_weight="1"
             android:background="@color/lightBlue"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/rehabb" />
+            app:srcCompat="@drawable/rehabw" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/lovelo"
+        android:text="back"
+        android:textSize="18sp"
+        app:backgroundTint="@color/coral"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

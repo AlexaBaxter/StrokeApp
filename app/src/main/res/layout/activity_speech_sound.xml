@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EFF6FA"
-    tools:context=".SpeechSoundActicity">
+    android:background="@color/location_bg"
+    tools:context=".SpeechSoundActivity">
 
     <TextView
         android:id="@+id/soundTitle"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:gravity="center"
-        android:background="@color/noTasks"
         android:layout_marginTop="220dp"
+        android:background="@color/noTasks"
+        android:fontFamily="@font/sarabun"
+        android:gravity="center"
+        android:text="work"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:fontFamily="@font/sarabun"
-        android:text="work"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,12 +26,12 @@
         android:id="@+id/speakB"
         android:layout_width="95dp"
         android:layout_height="43dp"
-        android:fontFamily="@font/sarabun"
-        android:backgroundTint="@color/lightBlue"
         android:layout_marginTop="220dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:fontFamily="@font/lovelo"
         android:text="Speak"
+        android:textSize="18sp"
+        app:backgroundTint="@color/blue"
         app:layout_constraintEnd_toStartOf="@+id/soundTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,22 +40,25 @@
         android:id="@+id/nextB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/lightBlue"
         android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:fontFamily="@font/sarabun"
         android:layout_marginTop="50dp"
+        android:fontFamily="@font/lovelo"
         android:text="Next"
+        android:textSize="18sp"
+        app:backgroundTint="@color/blue"
         app:layout_constraintStart_toEndOf="@+id/speakB"
         app:layout_constraintTop_toBottomOf="@+id/soundTitle" />
 
     <Button
         android:id="@+id/settingsB"
-        android:backgroundTint="@color/lightBlue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/sarabun"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/lovelo"
         android:text="Settings"
+        android:textSize="18sp"
+        app:backgroundTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -103,6 +106,20 @@
         android:text="S Sounds"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxCh" />
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/lovelo"
+        android:text="back"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:backgroundTint="@color/blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

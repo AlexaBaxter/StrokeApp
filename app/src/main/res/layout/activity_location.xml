@@ -4,300 +4,174 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EFF6FA"
+    android:background="@color/coral"
     tools:context=".LocationActivity">
 
+    <ImageButton
+        android:id="@+id/homeButtonL"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
+        android:background="@color/coral"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homecoral" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="394dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/tenorsans"
+            android:text="Location Reminder"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/locationLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/objTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/objET1"
+                android:layout_alignEnd="@id/objET1"
+                android:fontFamily="@font/tenorsans"
+                android:gravity="center"
+                android:text="Object"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/locTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/locET1"
+                android:layout_alignEnd="@id/locET1"
+                android:fontFamily="@font/tenorsans"
+                android:gravity="center"
+                android:text="Location"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/line1"
+                android:layout_width="350dp"
+                android:layout_height="7dp"
+                android:layout_below="@id/objTV"
+                android:layout_marginTop="10dp"
+                android:background="@color/darkCoral"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/objET1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line1"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/lightPink"
+                android:ems="10"
+                android:enabled="false"
+                android:fontFamily="@font/sarabun"
+                android:hint="Ex: Keys"
+                android:inputType="text"
+                android:padding="8dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/line2"
+                android:layout_width="7dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/line1"
+                android:layout_alignBottom="@id/objET1"
+                android:layout_toEndOf="@id/objET1"
+                android:background="@color/darkCoral"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/locET1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line1"
+                android:layout_alignEnd="@id/line1"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/line2"
+                android:background="@color/lightPink"
+                android:ems="10"
+                android:enabled="false"
+                android:fontFamily="@font/sarabun"
+                android:hint="Ex: On the kitchen table"
+                android:inputType="text"
+                android:padding="8dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/editB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/lovelo"
+            android:text="Edit"
+            android:textSize="20sp"
+            app:backgroundTint="@color/darkCoral" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:id="@+id/locEditLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
 
-            <ImageButton
-                android:id="@+id/HomeButton"
-                android:layout_width="175dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:background="@color/lightBlue"
-                android:scaleType="fitCenter"
-                android:tint="#0003A9F4"
-                app:srcCompat="@drawable/homew" />
+            <Button
+                android:id="@+id/saveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lovelo"
+                android:text="Save"
+                android:textSize="20sp"
+                app:backgroundTint="@color/location_dark" />
 
-            <ImageButton
-                android:id="@+id/ProfileButton"
-                android:layout_width="180dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:background="@color/lightBlue"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/profileb" />
-
-            <ImageButton
-                android:id="@+id/CalendarButton"
-                android:layout_width="180dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:background="@color/lightBlue"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/calendarb" />
-
-            <ImageButton
-                android:id="@+id/RehabButton"
-                android:layout_width="180dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:background="@color/lightBlue"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/rehabb" />
+            <Button
+                android:id="@+id/addBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/lovelo"
+                android:text="Add Row"
+                android:textSize="20sp"
+                app:backgroundTint="@color/location_dark" />
 
         </LinearLayout>
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-
-    <TextView
-        android:id="@+id/line1"
-        android:layout_width="350dp"
-        android:layout_height="7dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="145dp"
-        android:background="@color/lightGrey"
-        android:text=""
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/line2"
-        android:layout_width="7dp"
-        android:layout_height="230dp"
-        android:layout_marginStart="180dp"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="145dp"
-        android:background="@color/lightGrey"
-        android:text=""
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/objTV"
-        android:fontFamily="@font/tenorsans"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="100dp"
-        android:text="Object"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/locTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="100dp"
-        android:fontFamily="@font/tenorsans"
-        android:text="Location"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/obj1"
-        android:fontFamily="@font/sarabun"
-        android:textSize="20sp"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:background="@color/noTasks"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/objTV" />
-
-    <TextView
-        android:id="@+id/loc1"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/sarabun"
-        android:background="@color/noTasks"
-        android:text="TextView"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locTV" />
-
-    <TextView
-        android:id="@+id/obj2"
-        android:textSize="20sp"
-        android:fontFamily="@font/sarabun"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:background="@color/noTasks"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/obj1" />
-
-    <TextView
-        android:id="@+id/loc2"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/sarabun"
-        android:background="@color/noTasks"
-        android:text="TextView"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loc1" />
-
-    <TextView
-        android:id="@+id/obj3"
-        android:textSize="20sp"
-        android:fontFamily="@font/sarabun"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:background="@color/noTasks"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/obj2" />
-
-    <TextView
-        android:id="@+id/loc3"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/sarabun"
-        android:background="@color/noTasks"
-        android:text="TextView"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loc2" />
-
-    <EditText
-        android:id="@+id/objET1"
-        android:hint="Ex: Keys"
-        android:textSize="20sp"
-        android:fontFamily="@font/sarabun"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:text=""
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/objTV"
-        android:ems="10"
-        android:inputType="text"/>
-
-    <EditText
-        android:id="@+id/locET1"
-        android:hint="Ex: On the front table"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:fontFamily="@font/sarabun"
-        android:inputType="text"
-        android:text=""
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locTV" />
-
-    <EditText
-        android:id="@+id/objET2"
-        android:textSize="20sp"
-        android:fontFamily="@font/sarabun"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:text=""
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/obj1"
-        android:ems="10"
-        android:inputType="text"/>
-
-    <EditText
-        android:id="@+id/locET2"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:fontFamily="@font/sarabun"
-        android:inputType="text"
-        android:text=""
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loc1" />
-
-    <EditText
-        android:id="@+id/objET3"
-        android:textSize="20sp"
-        android:fontFamily="@font/sarabun"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:text=""
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/obj2"
-        android:ems="10"
-        android:inputType="text"/>
-
-    <EditText
-        android:id="@+id/locET3"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:fontFamily="@font/sarabun"
-        android:inputType="text"
-        android:text=""
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loc2" />
-
-    <Button
-        android:id="@+id/editB"
-        android:backgroundTint="@color/lightBlue"
-        android:fontFamily="@font/sarabun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

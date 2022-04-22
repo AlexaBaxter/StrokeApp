@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
     tools:context=".MentalActivity">
 
     <ImageView
@@ -31,11 +33,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:gravity="center"
         android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HomeButtonM">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/titleText"
@@ -54,7 +58,7 @@
             android:id="@+id/phoneNumPrompt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/sarabun"
             android:text="Send to family member/doctor/therapist:"
             android:textAllCaps="false"
@@ -75,7 +79,7 @@
             android:id="@+id/messagePrompt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/sarabun"
             android:text="Can you describe how you are feeling? Is there anything this person can do to help?"
             android:textColor="@color/coral"
@@ -94,7 +98,7 @@
             android:id="@+id/sendButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/lovelo"
             android:text="Send"
             app:backgroundTint="@color/blue" />

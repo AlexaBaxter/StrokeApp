@@ -19,10 +19,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-//import com.example.strokeapp.ml.ModelUnquant;
+import com.example.strokeapp.ml.ModelUnquant;
 
-//import org.tensorflow.lite.DataType;
-//import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
+import org.tensorflow.lite.DataType;
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
+
+import org.tensorflow.lite.DataType;
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -72,7 +75,7 @@ public class ObjectIdentifierActivity extends AppCompatActivity {
     }
 
     public void classifyImage(Bitmap image)
-    {/*
+    {
         try {
             ModelUnquant model = ModelUnquant.newInstance(getApplicationContext());
 
@@ -125,7 +128,7 @@ public class ObjectIdentifierActivity extends AppCompatActivity {
             model.close();
         } catch (IOException e) {
             // TODO Handle the exception
-        }*/
+        }
     }
 
     @Override

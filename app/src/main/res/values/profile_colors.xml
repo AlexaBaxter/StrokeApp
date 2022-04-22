@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="profile_bg">#c9ebff</color>
+    <color name="profile_dark">#0b7bbd</color>
+    <color name="profile_light">#a1dcff</color>
+</resources>

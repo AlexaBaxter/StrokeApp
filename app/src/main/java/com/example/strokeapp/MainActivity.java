@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void initializeButtons()
     {
-        homeButton = (ImageButton) findViewById(R.id.HomeButton);
+        homeButton = findViewById(R.id.HomeButton);
         homeButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        rehabButton = (ImageButton) findViewById(R.id.RehabButton);
+        rehabButton = findViewById(R.id.RehabButton);
         rehabButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        profileButton = (ImageButton) findViewById(R.id.ProfileButton);
+        profileButton = findViewById(R.id.ProfileButton);
         profileButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        calendarButton = (ImageButton) findViewById(R.id.CalendarButton);
+        calendarButton = findViewById(R.id.CalendarButton);
         calendarButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        mentalButton = (ImageButton) findViewById(R.id.MentalHealthButton);
+        mentalButton = findViewById(R.id.MentalHealthButton);
         mentalButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        emergencyButton = (ImageButton) findViewById(R.id.EmergencyButton);
+        emergencyButton = findViewById(R.id.EmergencyButton);
         emergencyButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        memoryButton = (ImageButton) findViewById(R.id.MemoryButton);
+        memoryButton = findViewById(R.id.MemoryButton);
         memoryButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

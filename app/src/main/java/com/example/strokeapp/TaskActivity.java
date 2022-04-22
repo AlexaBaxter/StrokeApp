@@ -66,8 +66,7 @@ public class TaskActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 name = enterName.getText().toString();
-                if(btnClicked && enterName.getText().toString().trim().length() != 0)
-                    nextBtn.setEnabled(true);
+                nextBtn.setEnabled(btnClicked && enterName.getText().toString().trim().length() != 0);
             }
 
             @Override

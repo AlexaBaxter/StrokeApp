@@ -29,7 +29,7 @@ public class MentalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mental);
 
-        homeButton = (ImageButton) findViewById(R.id.HomeButtonM);
+        homeButton = findViewById(R.id.HomeButtonM);
         homeButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -38,7 +38,7 @@ public class MentalActivity extends AppCompatActivity {
             }
         });
 
-        sendButton = (Button) findViewById(R.id.sendButton);
+        sendButton = findViewById(R.id.sendButton);
         sendButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -46,8 +46,8 @@ public class MentalActivity extends AppCompatActivity {
             }
         });
 
-        txtPhoneNum = (EditText) findViewById(R.id.phoneNumText);
-        txtMessage = (EditText) findViewById(R.id.messageText);
+        txtPhoneNum = findViewById(R.id.phoneNumText);
+        txtMessage = findViewById(R.id.messageText);
     }
 
     protected void sendSMS() {
@@ -68,7 +68,7 @@ public class MentalActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_SEND_SMS: {
                 if (grantResults.length > 0

@@ -1,25 +1,31 @@
 package com.example.strokeapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LocationActivity extends AppCompatActivity {
 
-    private ImageButton homeButton, calendarButton, rehabButton, profileButton;
-    private TextView [] locTV, objTV;
-    private EditText [] locET, objET;
+    List<EditText> objEditTexts = new ArrayList<>();
+    List<EditText> locEditTexts = new ArrayList<>();
+    private int numRows;
     private Button editButton;
-    private boolean edit;
+    private RelativeLayout relLayout;
     SharedPreferences items;
     SharedPreferences.Editor editor;
 
@@ -28,138 +34,148 @@ public class LocationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
 
-        locTV = new TextView[3];
-        objTV = new TextView[3];
-        locET = new EditText[3];
-        objET = new EditText[3];
         items = getSharedPreferences("list", Context.MODE_PRIVATE);
         editor = this.items.edit();
 
-        locTV[0] = (TextView) findViewById(R.id.loc1);
-        objTV[0] = (TextView) findViewById(R.id.obj1);
-        locTV[1] = (TextView) findViewById(R.id.loc2);
-        objTV[1] = (TextView) findViewById(R.id.obj2);
-        locTV[2] = (TextView) findViewById(R.id.loc3);
-        objTV[2] = (TextView) findViewById(R.id.obj3);
-        objET[0] = (EditText) findViewById(R.id.objET1);
-        locET[0] = (EditText) findViewById(R.id.locET1);
-        objET[1] = (EditText) findViewById(R.id.objET2);
-        locET[1] = (EditText) findViewById(R.id.locET2);
-        objET[2] = (EditText) findViewById(R.id.objET3);
-        locET[2] = (EditText) findViewById(R.id.locET3);
+        relLayout = findViewById(R.id.locationLayout);
+
+        int numO = items.getInt("num o", 0);
+        int numL = items.getInt("num l", 0);
+
+        objEditTexts.add(findViewById(R.id.objET1));
+        locEditTexts.add(findViewById(R.id.locET1));
+
+        for(int i = 1; i < 3 || i < Math.max(numO, numL); i++) {
+            addRow(i);
+            numRows++;
+        }
+
+        for(int i = 0; i < numO; i++) {
+            objEditTexts.get(i).setText(items.getString("obj"+i, ""));
+        }
+
+        for(int i = 0; i < numL; i++) {
+            locEditTexts.get(i).setText(items.getString("loc"+i, ""));
+        }
+
         editButton = (Button) findViewById(R.id.editB);
-        edit = false;
-        setEdit(edit);
-        setEditTexts();
-        setText();
-
-        homeButton = (ImageButton) findViewById(R.id.HomeButton);
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LocationActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
+        setEdit(false);
+        editButton.setOnClickListener(v -> {
+            setEdit(true);
         });
 
-        rehabButton = (ImageButton) findViewById(R.id.RehabButton);
-        rehabButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LocationActivity.this, RehabActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        profileButton = (ImageButton) findViewById(R.id.ProfileButton);
-        profileButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LocationActivity.this, ProfileActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        calendarButton = (ImageButton) findViewById(R.id.CalendarButton);
-        calendarButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LocationActivity.this, CalendarActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        editButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setEdit(edit);
-                if(edit){
-                    editButton.setText("Edit");
-                    setEdit(false);
-                    editMem();
-                    setText();
+        Button saveBtn = findViewById(R.id.saveBtn);
+        saveBtn.setOnClickListener(v -> {
+            int count1 = 0;
+            for(int i = 0; i < objEditTexts.size(); i++) {
+                String obj = getText(objEditTexts.get(i));
+                if(obj.length() > 0) {
+                    editor.putString("obj" + i, obj);
+                    count1++;
                 }
-                else{
-                    setEdit(true);
-                    editButton.setText("Done");
+            }
+            editor.putInt("num o", count1);
+            int count2 = 0;
+            for(int i = 0; i < locEditTexts.size(); i++) {
+                String loc = getText(locEditTexts.get(i));
+                if(loc.length() > 0) {
+                    editor.putString("loc" + i, loc);
+                    count2++;
                 }
-                edit = !edit;
             }
-        });
-    }
-
-    public void setEdit(boolean choice){
-        if(choice){
-            for(int i=0;i<locTV.length;i++){
-                locTV[i].setVisibility(View.INVISIBLE);
-                objTV[i].setVisibility(View.INVISIBLE);
-                locET[i].setEnabled(true);
-                objET[i].setEnabled(true);
-                locET[i].setVisibility(View.VISIBLE);
-                objET[i].setVisibility(View.VISIBLE);
-            }
-        }
-        else{
-            for(int i=0;i<locTV.length;i++){
-                locTV[i].setVisibility(View.VISIBLE);
-                objTV[i].setVisibility(View.VISIBLE);
-                locET[i].setEnabled(false);
-                objET[i].setEnabled(false);
-                locET[i].setVisibility(View.INVISIBLE);
-                objET[i].setVisibility(View.INVISIBLE);
-            }
-        }
-    }
-
-    public void setText() {
-        for(int i=0;i<locTV.length;i++){
-            String obj = items.getString("item"+i, "");
-            String loc = items.getString("loc"+i, "");
-            locTV[i].setText(loc);
-            objTV[i].setText(obj);
-        }
-    }
-
-    public void editMem(){
-        for(int i=0;i<locTV.length;i++){
-            String obj = objET[i].getText().toString();
-            if(obj.equals(""))
-                obj = items.getString("item"+i, "");
-            String loc = locET[i].getText().toString();
-            if(loc.equals(""))
-                loc = items.getString("loc"+i, "");
-            editor.putString("item"+i, obj);
-            editor.putString("loc"+i, loc);
+            editor.putInt("num l", count2);
             editor.apply();
+            setEdit(false);
+        });
+
+        Button addBtn = findViewById(R.id.addBtn);
+        addBtn.setOnClickListener(v -> {
+            addRow(numRows);
+            numRows++;
+        });
+
+        ImageButton homeBtn = findViewById(R.id.homeButtonL);
+        homeBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(LocationActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+    }
+
+    private void addRow(int i) {
+        EditText obj = createEditText(true, i);
+        EditText loc = createEditText(false, i);
+        objEditTexts.add(obj);
+        locEditTexts.add(loc);
+        relLayout.addView(obj);
+        relLayout.addView(loc);
+    }
+
+    private EditText createEditText(boolean obj, int index) {
+        EditText et = new EditText(this);
+        et.setBackgroundColor(getResources().getColor(R.color.lightPink));
+        int p = toPixel(8, getApplicationContext());
+        et.setPadding(p, p, p, p);
+        et.setTextSize(20);
+        et.setTextColor(getResources().getColor(R.color.black));
+        et.setTypeface(ResourcesCompat.getFont(this, R.font.sarabun));
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
+        );
+        int m = toPixel(10, getApplicationContext());
+        params.setMargins(0, m, 0, 0);
+        EditText prev = objEditTexts.get(index-1);
+        if(index != 1) prev.setId(index);
+        params.addRule(RelativeLayout.BELOW, prev.getId());
+        if(obj) {
+            params.addRule(RelativeLayout.ALIGN_START, R.id.objTV);
+            params.addRule(RelativeLayout.ALIGN_END, R.id.objTV);
+        }
+        else {
+            params.addRule(RelativeLayout.ALIGN_END, R.id.locTV);
+            params.addRule(RelativeLayout.ALIGN_START, R.id.locTV);
+            et.setId(index+1);
+            TextView line = findViewById(R.id.line2);
+            RelativeLayout.LayoutParams lineParams = new RelativeLayout.LayoutParams(
+                    toPixel(7, getApplicationContext()),
+                    RelativeLayout.LayoutParams.MATCH_PARENT
+            );
+            lineParams.addRule(RelativeLayout.BELOW, R.id.line1);
+            lineParams.addRule(RelativeLayout.END_OF, R.id.objET1);
+            lineParams.addRule(RelativeLayout.ALIGN_BOTTOM, et.getId());
+            line.setLayoutParams(lineParams);
+        }
+        et.setLayoutParams(params);
+        return et;
+    }
+
+
+    private void setEdit(boolean edit) {
+        LinearLayout btnLayout = findViewById(R.id.locEditLayout);
+        if(edit) {
+            for(int i = 0; i < objEditTexts.size(); i++) {
+                objEditTexts.get(i).setEnabled(true);
+                locEditTexts.get(i).setEnabled(true);
+                btnLayout.setVisibility(View.VISIBLE);
+                editButton.setVisibility(View.GONE);
+            }
+        }
+        else {
+            for(int i = 0; i < objEditTexts.size(); i++) {
+                objEditTexts.get(i).setEnabled(false);
+                locEditTexts.get(i).setEnabled(false);
+                btnLayout.setVisibility(View.GONE);
+                editButton.setVisibility(View.VISIBLE);
+            }
         }
     }
 
-    public void setEditTexts(){
-        for(int i=0;i<locTV.length;i++){
-            String obj = items.getString("item"+i, "");
-            String loc = items.getString("loc"+i, "");
-            locET[i].setText(loc);
-            objET[i].setText(obj);
-        }
+    private String getText (EditText editText) {
+        return editText.getText().toString().trim();
+    }
+
+    private static int toPixel(float dp, Context context){
+        float px = dp * ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+        return Math.round(px);
     }
 }

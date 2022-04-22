@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.strokeapp">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StrokeApp">
-        <activity android:name=".WinCardActivity"></activity>
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@drawable/image_btn_coral" />
+
+        <activity android:name=".WinCardActivity" />
         <activity android:name=".ObjectIdentifierActivity" />
         <activity android:name=".RehabActivity" />
         <activity android:name=".WalkingActivity" />
@@ -25,8 +30,7 @@
         <activity android:name=".MemoryActivity" />
         <activity android:name=".LocationActivity" />
         <activity android:name=".MemoryGamesActivity" />
-        <activity android:name=".SpeechActivity" />
-        <activity android:name=".SpeechSoundActicity" />
+        <activity android:name=".SpeechSoundActivity" />
         <activity android:name=".CardGameActivity" />
         <activity android:name=".PhysicalActivity" />
         <activity android:name=".CognitiveActivity" />

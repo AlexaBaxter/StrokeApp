@@ -10,7 +10,10 @@
     <color name="lightBlue">#abdffd</color>
     <color name="lightGrey">#cccccc</color>
     <color name="coral">#fdbeab</color>
+    <color name="darkCoral">#FA8989</color>
     <color name="blue">#3fb8fd</color>
     <color name="darkGrey">#a6a6a6</color>
     <color name="lightPink">#FFEBE4</color>
+    <color name="location_bg">#DBEAF3</color>
+    <color name="location_dark">#79BDE4</color>
 </resources>
