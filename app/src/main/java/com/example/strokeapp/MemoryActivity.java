@@ -33,5 +33,14 @@ public class MemoryActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        locationButton = (ImageButton) findViewById(R.id.locationButton);
+        locationButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MemoryActivity.this, LocationActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

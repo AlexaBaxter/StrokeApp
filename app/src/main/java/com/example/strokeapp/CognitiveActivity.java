@@ -74,13 +74,6 @@ public class CognitiveActivity extends AppCompatActivity {
             }
         });
 
-        locB = (Button) findViewById(R.id.locB);
-        locB.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(CognitiveActivity.this, LocationActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }
