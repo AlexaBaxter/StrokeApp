@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFEBE4"
+    android:background="#EFEFEF"
     tools:context=".RehabActivity">
 
     <ImageView
@@ -20,10 +20,14 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/Title"
@@ -32,37 +36,40 @@
             android:layout_marginBottom="50dp"
             android:fontFamily="@font/tenorsans"
             android:text="Rehab"
-            android:textColor="@color/coral"
+            android:textColor="@color/darkGrey"
             android:textSize="45sp"
             android:textStyle="bold" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/PhysicalButton"
-                android:layout_width="100dp"
+                android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_weight="1"
-                android:background="#FFEFE5"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/image_btn_coral"
                 android:scaleType="fitCenter"
+                android:tint="@color/white"
                 app:srcCompat="@drawable/physbutton" />
 
             <ImageButton
                 android:id="@+id/CognitiveButton"
-                android:layout_width="100dp"
+                android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_weight="1"
-                android:background="#FFEFE5"
+                android:background="@drawable/image_btn_blue"
                 android:scaleType="fitCenter"
+                android:tint="@color/white"
                 app:srcCompat="@drawable/cogbutton" />
 
         </LinearLayout>
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

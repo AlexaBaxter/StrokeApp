@@ -238,29 +238,39 @@ public class CalendarActivity extends AppCompatActivity {
         t.setPendingIntent(pendingIntent);
     }
 
-    public void createTaskDialog(Task t) {
+    private void createTaskDialog(Task t) {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        final View popUpView = getLayoutInflater().inflate(R.layout.popup, null);
+        final View popUpView = getLayoutInflater().inflate(R.layout.task_popup, null);
 
         dialogBuilder.setView(popUpView);
         dialog = dialogBuilder.create();
         dialog.show();
 
+        Button editBtn = popUpView.findViewById(R.id.editTaskBtn);
+        editBtn.setOnClickListener(v -> {
+            dialog.dismiss();
+            Intent intent = new Intent(CalendarActivity.this, TaskActivity.class);
+            intent.putExtra("edit", true);
+            intent.putExtra("index", tasks.indexOf(t));
+            intent.putExtra("type", t.getNotifType());
+        });
+
         TextView confirmDelete = popUpView.findViewById(R.id.confirmDelete);
-        LinearLayout btnLayout = popUpView.findViewById(R.id.delBtnLayout);
+        LinearLayout btnLayout = popUpView.findViewById(R.id.btnLayout);
+        LinearLayout delLayout = popUpView.findViewById(R.id.delBtnLayout);
 
         Button deleteBtn = popUpView.findViewById(R.id.deleteBtn);
         deleteBtn.setOnClickListener(v -> {
             confirmDelete.setVisibility(View.VISIBLE);
-            btnLayout.setVisibility(View.VISIBLE);
-            deleteBtn.setVisibility(View.GONE);
+            delLayout.setVisibility(View.VISIBLE);
+            btnLayout.setVisibility(View.GONE);
         });
 
         Button noBtn = popUpView.findViewById(R.id.noDelBtn);
         noBtn.setOnClickListener(v -> {
             confirmDelete.setVisibility(View.GONE);
-            btnLayout.setVisibility(View.GONE);
-            deleteBtn.setVisibility(View.VISIBLE);
+            delLayout.setVisibility(View.GONE);
+            btnLayout.setVisibility(View.VISIBLE);
         });
 
         Button yesBtn = popUpView.findViewById(R.id.yesDelBtn);

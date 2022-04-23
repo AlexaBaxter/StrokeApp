@@ -22,13 +22,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lovelo"
-            android:text="Task Details"
-            android:textColor="@color/calendar_dark"
+            android:text="Doctor Details"
+            android:textColor="@color/profile_dark"
             android:textSize="22sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/taskDetailsText"
+            android:id="@+id/drDetailsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -42,10 +42,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lovelo"
-            android:text="delete task"
+            android:text="delete"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
-            app:backgroundTint="@color/calendar_dark" />
+            app:backgroundTint="@color/profile_dark" />
 
         <TextView
             android:id="@+id/confirmDelete"
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/sarabun"
             android:gravity="center"
-            android:text="Delete this task?\n (This action cannot be undone.)"
+            android:text="Delete this doctor?\n (This action cannot be undone.)"
             android:textSize="20sp"
             android:textStyle="bold"
             android:visibility="gone" />
@@ -75,7 +75,7 @@
                 android:fontFamily="@font/lovelo"
                 android:text="no"
                 android:textSize="18sp"
-                app:backgroundTint="@color/calendar_dark" />
+                app:backgroundTint="@color/profile_dark" />
 
             <Button
                 android:id="@+id/yesDelBtn"
@@ -83,9 +83,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/lovelo"
-                android:text="yes, delete task"
+                android:text="yes, delete"
                 android:textSize="18sp"
-                app:backgroundTint="@color/calendar_dark" />
+                app:backgroundTint="@color/profile_dark" />
         </LinearLayout>
 
     </LinearLayout>

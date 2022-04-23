@@ -8,22 +8,14 @@ import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Locale;
-import java.util.Scanner;
 
-public class SpeechSoundActicity extends AppCompatActivity {
+public class SpeechSoundActivity extends AppCompatActivity {
 
     private Button speakButton, nextButton, settingsButton;
     private ImageButton homeButton, calendarButton, rehabButton, profileButton;
@@ -38,11 +30,11 @@ public class SpeechSoundActicity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_speech_sound_acticity);
+        setContentView(R.layout.activity_speech_sound);
         visible = false;
 
 
-        sounds = new ArrayList<String>();
+        sounds = new ArrayList<>();
         rSound = new String []{"run", "carrot", "rice", "rat", "bear", "four", "bird", "earring", "rake", "red", "arm", "iron", "rabbit", "lizard", "doctor", "rich", "party", "ladder"};
         sSound = new String []{"sit", "soup", "face", "bus", "fossil", "save", "city", "beside", "nice", "dress", "soft", "son", "eraser", "lettuce"};
         thSound = new String []{"think", "that", "the", "feather", "breathe", "scathe", "bathe", "mother", "either", "though", "thee", "themselves", "soothing"};
@@ -70,113 +62,64 @@ public class SpeechSoundActicity extends AppCompatActivity {
         settingsVisibility();
 
         homeButton = (ImageButton) findViewById(R.id.HomeButton);
-        homeButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SpeechSoundActicity.this, MainActivity.class);
-                startActivity(intent);
-            }
+        homeButton.setOnClickListener(view -> {
+            Intent intent = new Intent(SpeechSoundActivity.this, MainActivity.class);
+            startActivity(intent);
         });
 
         rehabButton = (ImageButton) findViewById(R.id.RehabButton);
-        rehabButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SpeechSoundActicity.this, RehabActivity.class);
-                startActivity(intent);
-            }
+        rehabButton.setOnClickListener(view -> {
+            Intent intent = new Intent(SpeechSoundActivity.this, RehabActivity.class);
+            startActivity(intent);
         });
 
         profileButton = (ImageButton) findViewById(R.id.ProfileButton);
-        profileButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SpeechSoundActicity.this, ProfileActivity.class);
-                startActivity(intent);
-            }
+        profileButton.setOnClickListener(view -> {
+            Intent intent = new Intent(SpeechSoundActivity.this, ProfileActivity.class);
+            startActivity(intent);
         });
 
         calendarButton = (ImageButton) findViewById(R.id.CalendarButton);
-        calendarButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SpeechSoundActicity.this, CalendarActivity.class);
-                startActivity(intent);
-            }
+        calendarButton.setOnClickListener(view -> {
+            Intent intent = new Intent(SpeechSoundActivity.this, CalendarActivity.class);
+            startActivity(intent);
         });
 
 
-        t1=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if(status == TextToSpeech.SUCCESS) {
-                    t1.setLanguage(Locale.US);
-                }
+        t1=new TextToSpeech(getApplicationContext(), status -> {
+            if(status == TextToSpeech.SUCCESS) {
+                t1.setLanguage(Locale.US);
             }
         });
 
-        speakButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String toSpeak = title.getText().toString();
-                t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+        speakButton.setOnClickListener(v -> {
+            String toSpeak = title.getText().toString();
+            t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+        });
+
+        nextButton.setOnClickListener(v -> {
+            if(num<sounds.size()) {
+                title.setText(sounds.get(num));
+                num++;
+            }
+            else{
+                Collections.shuffle(sounds);
+                title.setText(sounds.get(0));
+                num=1;
+
             }
         });
 
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(num<sounds.size()) {
-                    title.setText(sounds.get(num));
-                    num++;
-                }
-                else{
-                    Collections.shuffle(sounds);
-                    title.setText(sounds.get(0));
-                    num=1;
-
-                }
-            }
+        settingsButton.setOnClickListener(v -> {
+            visible = !visible;
+            settingsVisibility();
         });
 
-        settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                visible = !visible;
-                settingsVisibility();
-            }
-        });
-
-        rCheck.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createCollections();
-            }
-        });
-        sCheck.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createCollections();
-            }
-        });
-        thCheck.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createCollections();
-            }
-        });
-        chCheck.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createCollections();
-            }
-        });
-        shCheck.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createCollections();
-            }
-        });
+        rCheck.setOnClickListener(v -> createCollections());
+        sCheck.setOnClickListener(v -> createCollections());
+        thCheck.setOnClickListener(v -> createCollections());
+        chCheck.setOnClickListener(v -> createCollections());
+        shCheck.setOnClickListener(v -> createCollections());
 
     }
 

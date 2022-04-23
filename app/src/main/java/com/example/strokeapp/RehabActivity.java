@@ -19,7 +19,7 @@ public class RehabActivity extends AppCompatActivity {
 
     public void initializeButtons()
     {
-        homeButton = (ImageButton) findViewById(R.id.HomeButton);
+        homeButton = findViewById(R.id.HomeButton);
         homeButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -28,7 +28,7 @@ public class RehabActivity extends AppCompatActivity {
             }
         });
 
-        rehabButton = (ImageButton) findViewById(R.id.RehabButton);
+        rehabButton = findViewById(R.id.RehabButton);
         rehabButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -37,7 +37,7 @@ public class RehabActivity extends AppCompatActivity {
             }
         });
 
-        profileButton = (ImageButton) findViewById(R.id.ProfileButton);
+        profileButton = findViewById(R.id.ProfileButton);
         profileButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -46,7 +46,7 @@ public class RehabActivity extends AppCompatActivity {
             }
         });
 
-        calendarButton = (ImageButton) findViewById(R.id.CalendarButton);
+        calendarButton = findViewById(R.id.CalendarButton);
         calendarButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -55,7 +55,7 @@ public class RehabActivity extends AppCompatActivity {
             }
         });
 
-        physButton = (ImageButton) findViewById(R.id.PhysicalButton);
+        physButton = findViewById(R.id.PhysicalButton);
         physButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -64,7 +64,7 @@ public class RehabActivity extends AppCompatActivity {
             }
         });
 
-        cogButton = (ImageButton) findViewById(R.id.CognitiveButton);
+        cogButton = findViewById(R.id.CognitiveButton);
         cogButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
