@@ -107,7 +107,7 @@
                 android:background="@color/lightBlue"
                 android:scaleType="fitCenter"
                 android:tint="#0003A9F4"
-                app:srcCompat="@drawable/homew" />
+                app:srcCompat="@drawable/homeb" />
 
             <ImageButton
                 android:id="@+id/ProfileButton"
@@ -134,7 +134,7 @@
                 android:layout_weight="1"
                 android:background="@color/lightBlue"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/rehabb" />
+                app:srcCompat="@drawable/rehabw" />
 
         </LinearLayout>
 

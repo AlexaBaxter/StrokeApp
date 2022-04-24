@@ -8,10 +8,20 @@
     tools:context=".SpeechSoundActivity">
 
     <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:text="Practice speaking each word, then check if your pronounciation is correct."
+        app:layout_constraintBottom_toTopOf="@+id/soundTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/soundTitle"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="12dp"
         android:background="@color/noTasks"
         android:fontFamily="@font/sarabun"
         android:gravity="center"
@@ -19,18 +29,19 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/speakB"
         android:layout_width="95dp"
         android:layout_height="43dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="5dp"
         android:fontFamily="@font/lovelo"
         android:text="Speak"
-        android:textSize="18sp"
+        android:textSize="12sp"
         app:backgroundTint="@color/blue"
         app:layout_constraintEnd_toStartOf="@+id/soundTitle"
         app:layout_constraintStart_toStartOf="parent"
@@ -140,7 +151,7 @@
                 android:background="@color/lightBlue"
                 android:scaleType="fitCenter"
                 android:tint="#0003A9F4"
-                app:srcCompat="@drawable/homew" />
+                app:srcCompat="@drawable/homeb" />
 
             <ImageButton
                 android:id="@+id/ProfileButton"
@@ -167,7 +178,7 @@
                 android:layout_weight="1"
                 android:background="@color/lightBlue"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/rehabb" />
+                app:srcCompat="@drawable/rehabw" />
 
         </LinearLayout>
 

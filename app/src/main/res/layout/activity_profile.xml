@@ -236,7 +236,7 @@
                             android:layout_marginRight="10dp"
                             android:fontFamily="@font/sarabun"
                             android:gravity="end"
-                            android:text="Walking:"
+                            android:text="Walk:"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
 
