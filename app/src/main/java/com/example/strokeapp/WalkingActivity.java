@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,15 +30,15 @@ public class WalkingActivity extends AppCompatActivity {
             "hold for 5 seconds. Repeat 5 times on each leg."},
             {"Forward walking: Follow a straight line on the ground and walk forwards. Repeat 5 times.",
             "Forward step-overs: Facing forward, take steps over sticks on the ground. Make sure to step using alternating feet. Repeat 5 times.",
-            "Sideways step-overs: Facing sideways, take steps over sticks on the ground. Repeat 5 times."}       };
+            "Sideways step-overs: Facing sideways, take steps over sticks on the ground. Repeat 5 times."}};
     private final int[][] images = {{R.drawable.extention, R.drawable.marching, R.drawable.ankle},
             {R.drawable.straight, R.drawable.forward, R.drawable.side}};
     private final String[] instructions = {"Stay seated in a chair for all exercises.",
     "Use a cane or walking aid if necessary. Have a relative or caregiver next to you for support."};
     private final String[] title = {"Level 1", "Level 2"};
 
-    ProgressManager manager;
-    SharedPreferences sharedPref;
+    private ProgressManager manager;
+    private SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +63,8 @@ public class WalkingActivity extends AppCompatActivity {
         Button level2Button = findViewById(R.id.lvl2Button);
 
         sharedPref = getPreferences(Context.MODE_PRIVATE);
-        level = sharedPref.getInt("level", 0);
+        //level = sharedPref.getInt("level", 0);
+        level = 0;
         selectLevel();
 
         for(int i = 0; i < checkboxes.length; i++) {
@@ -71,6 +73,8 @@ public class WalkingActivity extends AppCompatActivity {
             cb.setOnClickListener(v -> {
                 if(cb.isChecked()) {
                     stars[x].setImageResource(R.drawable.filledstar);
+                    Toast.makeText(WalkingActivity.this, "Good job!",
+                            Toast.LENGTH_SHORT).show();
                     manager.changeStars(true, x, level);
                 }
                 else {
@@ -104,7 +108,7 @@ public class WalkingActivity extends AppCompatActivity {
 
         for(int i = 0; i < checkboxes.length; i++)
             checkboxes[i].setText(tasks[level][i]);
-        for(int i = 0; i < images.length; i++)
+        for(int i = 0; i < images[level].length; i++)
             imageViews[i].setImageResource(images[level][i]);
 
         for(ImageView star : stars) star.setImageResource(R.drawable.emptystar);

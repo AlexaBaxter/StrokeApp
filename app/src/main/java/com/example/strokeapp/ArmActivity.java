@@ -76,6 +76,8 @@ public class ArmActivity extends AppCompatActivity {
             int x = i;
             cb.setOnClickListener(v -> {
                 if(cb.isChecked()) {
+                    Toast.makeText(ArmActivity.this, "Good job!",
+                            Toast.LENGTH_SHORT).show();
                     stars[x].setImageResource(R.drawable.filledstar);
                     manager.changeStars(true, x, level+2);
                 }
@@ -112,7 +114,7 @@ public class ArmActivity extends AppCompatActivity {
 
         for(int i = 0; i < checkboxes.length; i++)
             checkboxes[i].setText(tasks[level][i]);
-        for(int i = 0; i < images.length; i++)
+        for(int i = 0; i < images[level].length; i++)
             imageViews[i].setImageResource(images[level][i]);
 
         for(ImageView star : stars) star.setImageResource(R.drawable.emptystar);

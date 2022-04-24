@@ -37,21 +37,14 @@ public class ObjectIdentifierActivity extends AppCompatActivity {
     ImageView imageView;
     Button picture;
     int imageSize = 224;
-    private ImageButton homeButton;
+    private ImageButton rehabButton, homeButton, profileButton, calendarButton;
+    private Button backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_object_identifier);
 
-        homeButton = (ImageButton) findViewById(R.id.homeButtonObject);
-        homeButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ObjectIdentifierActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
 
         result = findViewById(R.id.result);
         confidence = findViewById(R.id.confidence);
@@ -70,6 +63,51 @@ public class ObjectIdentifierActivity extends AppCompatActivity {
                     //Request camera permission if we don't have it.
                     requestPermissions(new String[]{Manifest.permission.CAMERA}, 100);
                 }
+            }
+        });
+
+        homeButton = findViewById(R.id.HomeButton);
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ObjectIdentifierActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        rehabButton = findViewById(R.id.RehabButton);
+        rehabButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ObjectIdentifierActivity.this, RehabActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        profileButton = findViewById(R.id.ProfileButton);
+        profileButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ObjectIdentifierActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        calendarButton = findViewById(R.id.CalendarButton);
+        calendarButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ObjectIdentifierActivity.this, CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        backBtn = findViewById(R.id.backbutton);
+        backBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ObjectIdentifierActivity.this, MemoryActivity.class);
+                startActivity(intent);
             }
         });
     }

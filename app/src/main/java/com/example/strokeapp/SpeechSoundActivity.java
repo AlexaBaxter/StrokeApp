@@ -17,7 +17,7 @@ import java.util.Locale;
 
 public class SpeechSoundActivity extends AppCompatActivity {
 
-    private Button speakButton, nextButton, settingsButton;
+    private Button speakButton, nextButton, settingsButton, backButton;
     private ImageButton homeButton, calendarButton, rehabButton, profileButton;
     private TextToSpeech t1;
     private TextView title;
@@ -113,6 +113,12 @@ public class SpeechSoundActivity extends AppCompatActivity {
         settingsButton.setOnClickListener(v -> {
             visible = !visible;
             settingsVisibility();
+        });
+
+        backButton = (Button) findViewById(R.id.backBtn);
+        backButton.setOnClickListener(view -> {
+            Intent intent = new Intent(SpeechSoundActivity.this, CognitiveActivity.class);
+            startActivity(intent);
         });
 
         rCheck.setOnClickListener(v -> createCollections());
