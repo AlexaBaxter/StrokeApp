@@ -37,7 +37,6 @@ public class ProfileActivity extends AppCompatActivity {
     private SharedPreferences.Editor editor;
     private String emailSubject, emailText;
     private ProgressManager progress;
-    private boolean sent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +106,9 @@ public class ProfileActivity extends AppCompatActivity {
 
         Button addDrBtn = findViewById(R.id.addDoctorBtn);
         addDrBtn.setOnClickListener(v -> {
-            createAddDoctorDialog();
+            Doctor d = new Doctor();
+            doctors.add(d);
+            createAddDoctorDialog(d, doctors.size());
         });
 
         progress = ProgressManager.getInstance();
@@ -126,7 +127,11 @@ public class ProfileActivity extends AppCompatActivity {
 
         Button emailBtn = findViewById(R.id.emailBtn);
         emailBtn.setOnClickListener(v -> {
-            createEmailDialog();
+            if(myName.equals("") || doctors.size() == 0)
+                Toast.makeText(getApplicationContext(),
+                        "Please fill in your name and/or doctor(s) to send a progress report.",
+                        Toast.LENGTH_LONG).show();
+            else createEmailDialog();
         });
     }
 
@@ -184,7 +189,7 @@ public class ProfileActivity extends AppCompatActivity {
         btn.setText(text);
         btn.setBackgroundColor(getResources().getColor(R.color.profile_bg));
         btn.setPadding(30, 0, 30, 0);
-        btn.setTextSize(20);
+        btn.setTextSize(12);
         btn.setTextColor(getResources().getColor(R.color.black));
         btn.setGravity(Gravity.CENTER_VERTICAL);
         btn.setAllCaps(false);
@@ -198,26 +203,32 @@ public class ProfileActivity extends AppCompatActivity {
         return btn;
     }
 
-    private void createAddDoctorDialog() {
+    private void createAddDoctorDialog(Doctor d, int index) {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         final View popUpView = getLayoutInflater().inflate(R.layout.add_doctor_popup, null);
 
         dialogBuilder.setView(popUpView);
         dialog = dialogBuilder.create();
+        dialog.setCanceledOnTouchOutside(false);
         dialog.show();
 
         editDrName = popUpView.findViewById(R.id.editDocName);
+        editDrName.setText(d.getName());
         editEmail = popUpView.findViewById(R.id.editEmail);
+        editEmail.setText(d.getEmail());
         editDrType = popUpView.findViewById(R.id.editType);
+        editDrType.setText(d.getType());
 
         Button addBtn = popUpView.findViewById(R.id.addDrBtn);
+        addBtn.setEnabled(getText(editDrName).length() != 0 && getText(editEmail).length() != 0);
         addBtn.setOnClickListener(v -> {
             dialog.dismiss();
-            Doctor newDoctor = new Doctor(getText(editDrName), getText(editEmail), getText(editDrType));
-            doctors.add(newDoctor);
-            editor.putString("drName" + (doctors.size()-1), newDoctor.getName());
-            editor.putString("email" + (doctors.size()-1), newDoctor.getEmail());
-            editor.putString("type" + (doctors.size()-1), newDoctor.getType());
+            d.setName(getText(editDrName));
+            d.setEmail(getText(editEmail));
+            d.setType(getText(editDrType));
+            editor.putString("drName" + index, d.getName());
+            editor.putString("email" + index, d.getEmail());
+            editor.putString("type" + index, d.getType());
             editor.putInt("number", doctors.size());
             editor.commit();
             showDoctors();
@@ -225,6 +236,9 @@ public class ProfileActivity extends AppCompatActivity {
 
         Button cancelBtn = popUpView.findViewById(R.id.addDrCancelBtn);
         cancelBtn.setOnClickListener(v -> {
+            doctors.remove(d);
+            editor.putInt("number", doctors.size());
+            editor.commit();
             dialog.dismiss();
         });
 
@@ -272,7 +286,7 @@ public class ProfileActivity extends AppCompatActivity {
             CheckBox cb = new CheckBox(this);
             cb.setText(d.getName());
             cb.setBackgroundColor(getResources().getColor(R.color.profile_bg));
-            cb.setTextSize(20);
+            cb.setTextSize(12);
             cb.setTextColor(getResources().getColor(R.color.black));
             cb.setTypeface(ResourcesCompat.getFont(this, R.font.sarabun));
             checkboxes.add(cb);
@@ -325,14 +339,13 @@ public class ProfileActivity extends AppCompatActivity {
                                 "squishy_tree123");
                         sender.sendMail(emailSubject, "Dear Dr. " + d.getName() + ",\n" + emailText,
                                 "app.homeheal@gmail.com", d.getEmail());
-                        sent = true;
+                        Toast.makeText(getApplicationContext(), "Email sent!", Toast.LENGTH_SHORT).show();
                     }
                     catch (Exception e) {
                         Log.e("SendMail", e.getMessage(), e);
                     }
                 }).start();
             }
-            if(sent) Toast.makeText(getApplicationContext(), "Email sent!", Toast.LENGTH_SHORT).show();
             dialog.dismiss();
         });
     }
@@ -365,6 +378,12 @@ public class ProfileActivity extends AppCompatActivity {
             confirmDelete.setVisibility(View.VISIBLE);
             btnLayout.setVisibility(View.VISIBLE);
             deleteBtn.setVisibility(View.GONE);
+        });
+
+        Button editBtn = popUpView.findViewById(R.id.editBtn);
+        editBtn.setOnClickListener(v -> {
+            dialog.dismiss();
+            createAddDoctorDialog(d, doctors.indexOf(d));
         });
 
         Button noBtn = popUpView.findViewById(R.id.noDelBtn);

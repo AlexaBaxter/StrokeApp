@@ -9,13 +9,13 @@ import java.util.List;
 public class Task implements Comparable<Task> {
 
     private String name;
-    private final String category;
-    private final String date;
-    private final String time;
-    private final String notifType;
-    private final int repeatType; // -1 = never, 0 = daily, 1 = weekly
-    private final int categoryNum;
-    private final int notifTypeNum; // 0 = scheduled, 1 = 10 min, 2 = 30 min, 3 = 1 hr, 4 = 1 day, 5 = never
+    private String category;
+    private String date;
+    private String time;
+    private String notifType;
+    private int repeatType; // -1 = never, 0 = daily, 1 = weekly
+    private int categoryNum;
+    private int notifTypeNum; // 0 = scheduled, 1 = 10 min, 2 = 30 min, 3 = 1 hr, 4 = 1 day, 5 = never
     private boolean notified;
 
     private PendingIntent pendingIntent;
@@ -31,6 +31,17 @@ public class Task implements Comparable<Task> {
 
     private static final String [] NOTIF_TYPES = new String [] {"at scheduled time", "10 min. before",
             "30 min. before", "1 day before", "never"};
+
+    public Task() {
+        name = "";
+        category = "";
+        date = "";
+        time = "";
+        categoryNum = -1;
+        notifType = "";
+        repeatType = -1;
+        notifTypeNum = 0;
+    }
 
     public Task(String n, String c, String d, String t, int rType, int nType) {
         name = n;
@@ -55,8 +66,30 @@ public class Task implements Comparable<Task> {
         return category;
     }
 
+    public void setCategory(String category) {
+        this.category = category;
+        categoryNum = CATEGORIES.indexOf(category);
+    }
+
     public String getDate() {
         return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public void setRepeatType(int repeatType) {
+        this.repeatType = repeatType;
+    }
+
+    public void setNotifTypeNum(int notifTypeNum) {
+        this.notifTypeNum = notifTypeNum;
+        notifType = NOTIF_TYPES[notifTypeNum];
     }
 
     public String getTime() {

@@ -2,13 +2,32 @@ package com.example.strokeapp;
 
 public class Doctor {
 
-    private final String name;
-    private final String email;
+    private String name;
+    private String email;
     private String type;
+
+    public Doctor() {
+        name = "";
+        email = "";
+        type = "";
+    }
 
     public Doctor(String name, String email, String type) {
         this.name = capitalize(name);
         this.email = email;
+        this.type = type;
+        if(!type.equals("")) this.type = capitalize(type);
+    }
+
+    public void setName(String name) {
+        this.name = capitalize(name);
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setType(String type) {
         this.type = type;
         if(!type.equals("")) this.type = capitalize(type);
     }

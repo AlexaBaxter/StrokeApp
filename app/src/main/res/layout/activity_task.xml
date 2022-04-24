@@ -4,18 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/calendar_bg"
-    tools:context=".TaskActivity">
+    android:background="@color/calendar_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +37,7 @@
                 android:fontFamily="@font/lovelo"
                 android:text="Task Name:"
                 android:textColor="@color/black"
-                android:textSize="22sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:visibility="visible" />
 
@@ -50,7 +48,7 @@
                 android:ems="8"
                 android:fontFamily="@font/sarabun"
                 android:gravity="center_horizontal"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:visibility="visible" />
 
         </LinearLayout>
@@ -62,7 +60,7 @@
             android:fontFamily="@font/sarabun"
             android:text="Choose a category for your task:"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="14sp"
             android:visibility="visible" />
 
         <RadioGroup
@@ -81,7 +79,7 @@
                 android:buttonTint="@color/black"
                 android:fontFamily="@font/sarabun"
                 android:text="medications"
-                android:textSize="18sp" />
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/cogRB"
@@ -92,7 +90,7 @@
                 android:buttonTint="@color/black"
                 android:fontFamily="@font/sarabun"
                 android:text="cognitive rehab"
-                android:textSize="18sp" />
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/physRB"
@@ -103,7 +101,7 @@
                 android:buttonTint="@color/black"
                 android:fontFamily="@font/sarabun"
                 android:text="physical rehab"
-                android:textSize="18sp" />
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/appRB"
@@ -114,7 +112,7 @@
                 android:buttonTint="@color/black"
                 android:fontFamily="@font/sarabun"
                 android:text="appointments"
-                android:textSize="18sp" />
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/mentalRB"
@@ -125,7 +123,7 @@
                 android:buttonTint="@color/black"
                 android:fontFamily="@font/sarabun"
                 android:text="mental health check-in"
-                android:textSize="18sp" />
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/otherRB"
@@ -135,7 +133,7 @@
                 android:buttonTint="@color/black"
                 android:fontFamily="@font/sarabun"
                 android:text="other/personal event"
-                android:textSize="18sp" />
+                android:textSize="12sp" />
 
         </RadioGroup>
 
@@ -154,7 +152,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/lovelo"
                 android:text="Cancel"
-                android:textSize="18sp"
+                android:textSize="12sp"
                 app:backgroundTint="#DD8E8E" />
 
             <Button
@@ -167,7 +165,7 @@
                 android:enabled="false"
                 android:fontFamily="@font/lovelo"
                 android:text="Next"
-                android:textSize="18sp"
+                android:textSize="12sp"
                 app:backgroundTint="@color/calendar_dark" />
 
 
