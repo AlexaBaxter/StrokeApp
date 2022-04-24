@@ -10,15 +10,47 @@ import android.widget.ImageButton;
 
 public class MemoryActivity extends AppCompatActivity {
 
+    private ImageButton rehabButton, homeButton, profileButton, calendarButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
 
-        ImageButton homeButton = findViewById(R.id.homeButtonMem);
-        homeButton.setOnClickListener(view -> {
-            Intent intent = new Intent(MemoryActivity.this, MainActivity.class);
-            startActivity(intent);
+        homeButton = findViewById(R.id.HomeButton);
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MemoryActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        rehabButton = findViewById(R.id.RehabButton);
+        rehabButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MemoryActivity.this, RehabActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        profileButton = findViewById(R.id.ProfileButton);
+        profileButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MemoryActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        calendarButton = findViewById(R.id.CalendarButton);
+        calendarButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MemoryActivity.this, CalendarActivity.class);
+                startActivity(intent);
+            }
         });
 
         ImageButton objectButton = findViewById(R.id.objectButton);

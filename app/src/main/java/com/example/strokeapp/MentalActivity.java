@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class MentalActivity extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0 ;
-    ImageButton homeButton;
+    private ImageButton rehabButton, homeButton, profileButton, calendarButton;
     Button sendButton;
     EditText txtPhoneNum;
     EditText txtMessage;
@@ -29,11 +29,38 @@ public class MentalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mental);
 
-        homeButton = findViewById(R.id.HomeButtonM);
+        homeButton = findViewById(R.id.HomeButton);
         homeButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MentalActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        rehabButton = findViewById(R.id.RehabButton);
+        rehabButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MentalActivity.this, RehabActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        profileButton = findViewById(R.id.ProfileButton);
+        profileButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MentalActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        calendarButton = findViewById(R.id.CalendarButton);
+        calendarButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MentalActivity.this, CalendarActivity.class);
                 startActivity(intent);
             }
         });

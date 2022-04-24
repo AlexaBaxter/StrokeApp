@@ -7,18 +7,17 @@
     android:background="@color/coral"
     tools:context=".LocationActivity">
 
-    <ImageButton
-        android:id="@+id/homeButtonL"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-
-        android:background="@color/coral"
-        android:scaleType="fitCenter"
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/blue"
+        android:text="Back"
+        app:backgroundTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/homecoral" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -173,5 +172,57 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="394dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/HomeButton"
+                android:layout_width="175dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="@color/lightBlue"
+                android:scaleType="fitCenter"
+                android:tint="#0003A9F4"
+                app:srcCompat="@drawable/homew" />
+
+            <ImageButton
+                android:id="@+id/ProfileButton"
+                android:layout_width="180dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="@color/lightBlue"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/profileb" />
+
+            <ImageButton
+                android:id="@+id/CalendarButton"
+                android:layout_width="180dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="@color/lightBlue"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/calendarb" />
+
+            <ImageButton
+                android:id="@+id/RehabButton"
+                android:layout_width="180dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="@color/lightBlue"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/rehabb" />
+
+        </LinearLayout>
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

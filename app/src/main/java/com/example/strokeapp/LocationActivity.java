@@ -28,6 +28,7 @@ public class LocationActivity extends AppCompatActivity {
     private RelativeLayout relLayout;
     SharedPreferences items;
     SharedPreferences.Editor editor;
+    private ImageButton rehabButton, homeButton, profileButton, calendarButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,12 +95,49 @@ public class LocationActivity extends AppCompatActivity {
             numRows++;
         });
 
-        ImageButton homeBtn = findViewById(R.id.homeButtonL);
-        homeBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(LocationActivity.this, MainActivity.class);
+        Button backBtn = findViewById(R.id.backButton);
+        backBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(LocationActivity.this, MemoryActivity.class);
             startActivity(intent);
         });
+
+        homeButton = findViewById(R.id.HomeButton);
+        homeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LocationActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        rehabButton = findViewById(R.id.RehabButton);
+        rehabButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LocationActivity.this, RehabActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        profileButton = findViewById(R.id.ProfileButton);
+        profileButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LocationActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        calendarButton = findViewById(R.id.CalendarButton);
+        calendarButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LocationActivity.this, CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 
     private void addRow(int i) {
         EditText obj = createEditText(true, i);
