@@ -34,8 +34,9 @@
         android:layout_height="wrap_content"
         android:background="#00FDBEAB"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo7">
+        app:layout_constraintTop_toBottomOf="@+id/backbutton">
 
         <TextView
             android:id="@+id/titleObject"
@@ -45,7 +46,8 @@
             android:gravity="center_horizontal"
             android:text="Object Identifier"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -58,20 +60,24 @@
             android:id="@+id/result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/lightPink" />
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textColor="@color/lightPink"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/confidence"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:textColor="@color/lightPink" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:background="@color/lightPink"
             android:text="Take picture"
             android:textColor="@color/darkCoral"
@@ -79,6 +85,7 @@
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

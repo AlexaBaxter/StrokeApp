@@ -24,11 +24,12 @@
         <activity android:name=".WalkingActivity" />
         <activity android:name=".ArmActivity" />
         <activity android:name=".EmergencyActivity"
-            android:windowSoftInputMode="adjustNothing" />
-        <activity android:name=".MentalActivity" />
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".MentalActivity"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".CalendarActivity" />
         <activity android:name=".ProfileActivity"
-            android:windowSoftInputMode="adjustNothing" />
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".MemoryActivity" />
         <activity android:name=".LocationActivity" />
         <activity android:name=".MemoryGamesActivity" />

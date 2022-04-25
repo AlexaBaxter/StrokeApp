@@ -2,6 +2,7 @@ package com.example.strokeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,7 +23,8 @@ public class ArmActivity extends AppCompatActivity {
     private TextView levelInstruct, levelTitle;
     private ImageView [] imageViews;
     private int level = 1;
-    public ImageButton rehabButton, homeButton, profileButton, calendarButton;
+    private ImageButton rehabButton, homeButton, profileButton, calendarButton;
+    private AlertDialog dialog;
 
     private final String[][] tasks = {
             {"Tabletop Circles: Lace fingers around water bottle and make large circular " +
@@ -105,6 +107,16 @@ public class ArmActivity extends AppCompatActivity {
             Intent intent = new Intent(ArmActivity.this, PhysicalActivity.class);
             startActivity(intent);
         });
+
+        ImageView [] imageViews = new ImageView [] {findViewById(R.id.imageView1),
+                findViewById(R.id.imageView2), findViewById(R.id.imageView3)};
+        for(int i = 0; i < imageViews.length; i++) {
+            ImageView view = imageViews[i];
+            final int x = i;
+            view.setOnClickListener(v -> {
+                createImageDialog(x);
+            });
+        }
     }
 
     private void selectLevel()
@@ -128,7 +140,27 @@ public class ArmActivity extends AppCompatActivity {
         }
     }
 
-    public void initializeButtons()
+    private void createImageDialog(int index) {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        final View popUpView = getLayoutInflater().inflate(R.layout.image_popup, null);
+
+        dialogBuilder.setView(popUpView);
+        dialog = dialogBuilder.create();
+        dialog.show();
+
+        ImageView img = popUpView.findViewById(R.id.exerciseImage);
+        img.setImageResource(images[level][index]);
+
+        String [][] names = new String [][] {
+                {"Tabletop Circles", "Unweighted Bicep Curls", "Open Arm"},
+                {"Weight Lean", "Sideways Push", "Forward Push"}
+        };
+
+        TextView title = popUpView.findViewById(R.id.exerciseName);
+        title.setText(names[level][index]);
+    }
+
+    private void initializeButtons()
     {
         homeButton = findViewById(R.id.HomeButtonA);
         homeButton.setOnClickListener(view -> {

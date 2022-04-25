@@ -7,262 +7,263 @@
     android:background="#FFEBE4"
     tools:context=".WalkingActivity">
 
+    <ImageView
+        android:id="@+id/logo5"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/strokelogo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backBtn">
+
+        <TextView
+            android:id="@+id/titleArm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/tenorsans"
+            android:gravity="center"
+            android:text="Arm Exercises"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/instructionsW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/sarabun"
+            android:gravity="center"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="Stay seated for all exercises."
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/lv1Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lovelo"
+                android:text="Level 1"
+                android:textSize="12sp"
+                app:backgroundTint="@color/coral" />
+
+            <Button
+                android:id="@+id/lvl2Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/lovelo"
+                android:text="Level 2"
+                android:textSize="12sp"
+                app:backgroundTint="@color/coral" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/levelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/tenorsans"
+            android:text="Level 1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/darkGrey"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/star1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/emptystar" />
+
+            <ImageView
+                android:id="@+id/star2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/emptystar" />
+
+            <ImageView
+                android:id="@+id/star3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/emptystar" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
-            <ImageView
-                android:id="@+id/logo5"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="6dp"
-                app:srcCompat="@drawable/strokelogo" />
-
-            <LinearLayout
-                android:id="@+id/linearLayout5"
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@color/coral"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp">
+                android:padding="5dp">
 
-                <TextView
-                    android:id="@+id/titleWalking"
+                <CheckBox
+                    android:id="@+id/checkBox1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/tenorsans"
-                    android:gravity="center"
-                    android:text="Walking Exercises"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-                    android:textSize="32sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/levelText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/tenorsans"
-                    android:text="Level 1"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="@color/darkGrey"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/instructionsW"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
                     android:fontFamily="@font/sarabun"
-                    android:gravity="center"
-                    android:text="Stay seated for all exercises."
-                    android:textSize="18sp" />
+                    android:text="Knee extensions: Extend one leg until its parallel to the ground. Then, slowly lower your foot back down. Repeat 10 times on each leg (alternating)."
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="100dp"
+                    android:layout_height="70dp"
+                    app:srcCompat="@drawable/extention" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:background="@color/coral"
+                android:gravity="center"
+                android:padding="5dp">
+
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/sarabun"
+                    android:text="Seated marching: Lift leg up to chest, then put it back down. Repeat 10 times on each leg (alternating)."
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
 
-                    <ImageView
-                        android:id="@+id/star1"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        app:srcCompat="@drawable/emptystar" />
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    app:srcCompat="@drawable/marching" />
+            </TableRow>
 
-                    <ImageView
-                        android:id="@+id/star2"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        app:srcCompat="@drawable/emptystar" />
-
-                    <ImageView
-                        android:id="@+id/star3"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        app:srcCompat="@drawable/emptystar" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/lv1Button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/lovelo"
-                        android:text="Level 1 "
-                        android:textSize="18sp"
-                        app:backgroundTint="@color/coral" />
-
-                    <Button
-                        android:id="@+id/lvl2Button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/lovelo"
-                        android:text="Level 2"
-                        android:textSize="18sp"
-                        app:backgroundTint="@color/coral" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp">
+                android:layout_marginTop="5dp"
+                android:background="@color/coral"
+                android:gravity="center"
+                android:padding="5dp">
 
-                <TableRow
+                <CheckBox
+                    android:id="@+id/checkBox3"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/coral"
-                    android:gravity="center"
-                    android:padding="5dp">
-
-                    <CheckBox
-                        android:id="@+id/checkBox1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/sarabun"
-                        android:text="Knee extensions: Extend one leg until its parallel to the ground. Then, slowly lower your foot back down. Repeat 10 times on each leg (alternating)."
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
-
-                    <ImageView
-                        android:id="@+id/imageView1"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
-                        app:srcCompat="@drawable/extention" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/coral"
-                    android:gravity="center"
-                    android:padding="5dp">
-
-                    <CheckBox
-                        android:id="@+id/checkBox2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/sarabun"
-                        android:text="Seated marching: Lift leg up to chest, then put it back down. Repeat 10 times on each leg (alternating)."
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
-
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="100dp"
-                        android:layout_height="60dp"
-                        app:srcCompat="@drawable/marching" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/coral"
-                    android:gravity="center"
-                    android:padding="5dp">
-
-                    <CheckBox
-                        android:id="@+id/checkBox3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/sarabun"
-                        android:text="Ankle Stretch: Start with one leg crossed over your other leg. Flex your foot back towards your shin, and hold for 5 seconds. Repeat times on each leg."
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
-
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="100dp"
-                        android:layout_height="60dp"
-                        app:srcCompat="@drawable/ankle" />
-
-                </TableRow>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <ImageButton
-                    android:id="@+id/HomeButtonW"
-                    android:layout_width="175dp"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
-                    android:background="@color/lightBlue"
-                    android:scaleType="fitCenter"
-                    android:tint="#0003A9F4"
-                    app:srcCompat="@drawable/homeb" />
+                    android:fontFamily="@font/sarabun"
+                    android:text="Ankle Stretch: Start with one leg crossed over your other leg. Flex your foot back towards your shin, and hold for 5 seconds. Repeat times on each leg."
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
 
-                <ImageButton
-                    android:id="@+id/ProfileButtonW"
-                    android:layout_width="180dp"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:background="@color/lightBlue"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/profileb" />
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    app:srcCompat="@drawable/ankle" />
 
-                <ImageButton
-                    android:id="@+id/CalendarButtonW"
-                    android:layout_width="180dp"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:background="@color/lightBlue"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/calendarb" />
-
-                <ImageButton
-                    android:id="@+id/RehabButtonW"
-                    android:layout_width="180dp"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:background="@color/lightBlue"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/rehabw" />
-
-            </LinearLayout>
+            </TableRow>
 
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/HomeButtonW"
+            android:layout_width="175dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@color/lightBlue"
+            android:scaleType="fitCenter"
+            android:tint="#0003A9F4"
+            app:srcCompat="@drawable/homeb" />
+
+        <ImageButton
+            android:id="@+id/ProfileButtonW"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@color/lightBlue"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/profileb" />
+
+        <ImageButton
+            android:id="@+id/CalendarButtonW"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@color/lightBlue"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/calendarb" />
+
+        <ImageButton
+            android:id="@+id/RehabButtonW"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@color/lightBlue"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/rehabw" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/backBtn"
@@ -272,7 +273,7 @@
         android:layout_marginEnd="10dp"
         android:fontFamily="@font/lovelo"
         android:text="back"
-        android:textSize="18sp"
+        android:textSize="12sp"
         app:backgroundTint="@color/coral"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

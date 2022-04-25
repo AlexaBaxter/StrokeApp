@@ -46,6 +46,7 @@ public class LocationActivity extends AppCompatActivity {
         objEditTexts.add(findViewById(R.id.objET1));
         locEditTexts.add(findViewById(R.id.locET1));
 
+        numRows = 1;
         for(int i = 1; i < 3 || i < Math.max(numO, numL); i++) {
             addRow(i);
             numRows++;
@@ -153,7 +154,7 @@ public class LocationActivity extends AppCompatActivity {
         et.setBackgroundColor(getResources().getColor(R.color.lightPink));
         int p = toPixel(8, getApplicationContext());
         et.setPadding(p, p, p, p);
-        et.setTextSize(20);
+        et.setTextSize(16);
         et.setTextColor(getResources().getColor(R.color.black));
         et.setTypeface(ResourcesCompat.getFont(this, R.font.sarabun));
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(

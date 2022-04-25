@@ -228,9 +228,9 @@ public class CalendarActivity extends AppCompatActivity implements DatePickerDia
 
         AlarmManager alarmMgr = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
 
-        long time = System.currentTimeMillis();
+        long currTime = System.currentTimeMillis();
         if(t.getRepeatType() == -1) {
-            if(System.currentTimeMillis() < alarmTime) {
+            if(currTime < alarmTime) {
                 alarmMgr.set(AlarmManager.RTC_WAKEUP, alarmTime, pendingIntent);
                 t.setNotified(true);
             }
@@ -240,8 +240,10 @@ public class CalendarActivity extends AppCompatActivity implements DatePickerDia
             long interval = AlarmManager.INTERVAL_DAY;
             /*if(t.getRepeatType() == 1)
                 interval *= 7;*/
-            alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, alarmTime, interval, pendingIntent);
-            t.setNotified(true);
+            if(!t.isNotified() && currTime < alarmTime) {
+                alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, alarmTime, interval, pendingIntent);
+                t.setNotified(true);
+            }
         }
         t.setPendingIntent(pendingIntent);
     }

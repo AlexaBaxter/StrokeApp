@@ -1,5 +1,6 @@
 package com.example.strokeapp;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,7 +22,8 @@ public class WalkingActivity extends AppCompatActivity {
     private TextView levelInstruct, levelTitle;
     private ImageView [] imageViews;
     private int level = 0;
-    public ImageButton rehabButton, homeButton, profileButton, calendarButton;
+    private ImageButton rehabButton, homeButton, profileButton, calendarButton;
+    private AlertDialog dialog;
 
     private final String[][] tasks = {{"Knee extensions: Extend one leg until its parallel to the ground. Then, " +
             "slowly lower your foot back down. Repeat 10 times on each leg (alternating).",
@@ -99,6 +101,16 @@ public class WalkingActivity extends AppCompatActivity {
             Intent intent = new Intent(WalkingActivity.this, PhysicalActivity.class);
             startActivity(intent);
         });
+
+        ImageView [] imageViews = new ImageView [] {findViewById(R.id.imageView1),
+                findViewById(R.id.imageView2), findViewById(R.id.imageView3)};
+        for(int i = 0; i < imageViews.length; i++) {
+            ImageView view = imageViews[i];
+            final int x = i;
+            view.setOnClickListener(v -> {
+                createImageDialog(x);
+            });
+        }
     }
 
     private void selectLevel()
@@ -120,6 +132,26 @@ public class WalkingActivity extends AppCompatActivity {
                 checkboxes[i].setChecked(true);
             }
         }
+    }
+
+    private void createImageDialog(int index) {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        final View popUpView = getLayoutInflater().inflate(R.layout.image_popup, null);
+
+        dialogBuilder.setView(popUpView);
+        dialog = dialogBuilder.create();
+        dialog.show();
+
+        ImageView img = popUpView.findViewById(R.id.exerciseImage);
+        img.setImageResource(images[level][index]);
+
+        String [][] names = new String [][] {
+                {"Knee Extensions", "Seated Marching", "Ankle Stretch"},
+                {"Forward Walking", "Forward Step-Overs", "Sideways Step-Overs"}
+        };
+
+        TextView title = popUpView.findViewById(R.id.exerciseName);
+        title.setText(names[level][index]);
     }
 
     public void initializeButtons()

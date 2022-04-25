@@ -7,6 +7,15 @@
     android:background="#EFF6FA"
     tools:context=".WinCardActivity">
 
+    <ImageView
+        android:id="@+id/logo5"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/strokelogo" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
@@ -27,7 +36,7 @@
                 android:background="@color/lightBlue"
                 android:scaleType="fitCenter"
                 android:tint="#0003A9F4"
-                app:srcCompat="@drawable/homew" />
+                app:srcCompat="@drawable/homeb" />
 
             <ImageButton
                 android:id="@+id/ProfileButton"
@@ -54,7 +63,7 @@
                 android:layout_weight="1"
                 android:background="@color/lightBlue"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/rehabb" />
+                app:srcCompat="@drawable/rehabw" />
 
         </LinearLayout>
 

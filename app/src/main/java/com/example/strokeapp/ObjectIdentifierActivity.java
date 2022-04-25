@@ -159,7 +159,7 @@ public class ObjectIdentifierActivity extends AppCompatActivity {
             String s = "";
             for(int i=0; i< classes.length; i++)
             {
-                s+= String.format("%s:%.1f%%\n", classes[i], confidences[i]*100);
+                s+= String.format("%s: %.1f%%\n", classes[i], confidences[i]*100);
             }
             confidence.setText(s);
             // Releases model resources if no longer used.
