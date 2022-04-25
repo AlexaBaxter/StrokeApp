@@ -24,7 +24,7 @@
             android:fontFamily="@font/lovelo"
             android:text="Task Details"
             android:textColor="@color/calendar_dark"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
@@ -35,7 +35,7 @@
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/sarabun"
             android:text="Name:"
-            android:textSize="20sp" />
+            android:textSize="12sp" />
 
         <LinearLayout
             android:id="@+id/btnLayout"
@@ -51,7 +51,7 @@
                 android:fontFamily="@font/lovelo"
                 android:text="delete task"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:textSize="12sp"
                 app:backgroundTint="@color/calendar_dark" />
 
             <Button
@@ -62,7 +62,7 @@
                 android:fontFamily="@font/lovelo"
                 android:text="edit task"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:textSize="12sp"
                 app:backgroundTint="@color/calendar_dark" />
 
         </LinearLayout>
@@ -74,7 +74,7 @@
             android:fontFamily="@font/sarabun"
             android:gravity="center"
             android:text="Delete this task?\n (This action cannot be undone.)"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:visibility="gone" />
 
@@ -94,7 +94,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/lovelo"
                 android:text="no"
-                android:textSize="18sp"
+                android:textSize="12sp"
                 app:backgroundTint="@color/calendar_dark" />
 
             <Button
@@ -104,7 +104,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/lovelo"
                 android:text="yes, delete task"
-                android:textSize="18sp"
+                android:textSize="12sp"
                 app:backgroundTint="@color/calendar_dark" />
         </LinearLayout>
 

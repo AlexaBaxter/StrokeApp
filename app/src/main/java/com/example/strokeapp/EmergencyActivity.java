@@ -28,7 +28,6 @@ public class EmergencyActivity extends AppCompatActivity {
     private Button editButton, addButton, phoneB1, phoneB2, phoneB3, phoneB4, phoneB5, phoneB6;
     private EditText phone1, phone2, phone3, phone4, phone5, phone6, phoneT4, phoneT5, phoneT6;
     private TextView contact4, contact5, contact6 ;
-    private ImageButton homeB;
     private boolean clicked=false;
     SharedPreferences phoneNums;
     SharedPreferences.Editor editor;
@@ -49,6 +48,8 @@ public class EmergencyActivity extends AppCompatActivity {
         phoneNums = getSharedPreferences("contacts", Context.MODE_PRIVATE);
         editor = this.phoneNums.edit();
         setContentView(R.layout.activity_emergency);
+        initializeButtons();
+
         addButton = findViewById(R.id.addButton2);
         editButton = findViewById(R.id.editButton);
         phoneB1 = findViewById(R.id.phoneB1);
@@ -57,8 +58,6 @@ public class EmergencyActivity extends AppCompatActivity {
         phoneB4 = findViewById(R.id.phoneB4);
         phoneB5 = findViewById(R.id.phoneB5);
         phoneB6 = findViewById(R.id.phoneB6);
-
-        homeB = findViewById(R.id.homeButtonE);
 
         contact4 = findViewById(R.id.contactText4);
         contact5 = findViewById(R.id.contactText5);
@@ -80,91 +79,59 @@ public class EmergencyActivity extends AppCompatActivity {
         changeEdit(1);
 
 
-        editButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(clicked==false) {
-                    editButton.setText("Done");
-                    changeEdit(0);
-                }
-                else {
-                    editButton.setText("Edit");
-                    changeEdit(1);
-                    setData(phoneNums);
-                }
-                clicked=!clicked;
-            }
-        });
-
-        homeB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(EmergencyActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String extraNum = phoneNums.getString("numExtra", "0");
-                if (extraNum.equals("0")) {
-                    editor.putString("numExtra", "1");
-                    editor.apply();
-                }
-                else if (extraNum.equals("1")) {
-                    editor.putString("numExtra", "2");
-                    editor.apply();
-                }
-                else if (extraNum.equals("2")) {
-                    editor.putString("numExtra", "3");
-                    editor.apply();
-                }
+        editButton.setOnClickListener(v -> {
+            if(!clicked) {
+                editButton.setText("Done");
                 changeEdit(0);
             }
+            else {
+                editButton.setText("Edit");
+                changeEdit(1);
+                setData(phoneNums);
+            }
+            clicked=!clicked;
         });
 
-        phoneB1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String num = phoneNums.getString("phoneN1", "");
-                makeCall(num);
+        addButton.setOnClickListener(v -> {
+            String extraNum = phoneNums.getString("numExtra", "0");
+            if (extraNum.equals("0")) {
+                editor.putString("numExtra", "1");
+                editor.apply();
             }
+            else if (extraNum.equals("1")) {
+                editor.putString("numExtra", "2");
+                editor.apply();
+            }
+            else if (extraNum.equals("2")) {
+                editor.putString("numExtra", "3");
+                editor.apply();
+            }
+            changeEdit(0);
         });
-        phoneB2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String num = phoneNums.getString("phoneN2", "");
-                makeCall(num);
-            }
+
+        phoneB1.setOnClickListener(v -> {
+            String num = phoneNums.getString("phoneN1", "");
+            makeCall(num);
         });
-        phoneB3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String num = phoneNums.getString("phoneN3", "");
-                makeCall(num);
-            }
+        phoneB2.setOnClickListener(v -> {
+            String num = phoneNums.getString("phoneN2", "");
+            makeCall(num);
         });
-        phoneB4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String num = phoneNums.getString("phoneN4", "");
-                makeCall(num);
-            }
+        phoneB3.setOnClickListener(v -> {
+            String num = phoneNums.getString("phoneN3", "");
+            makeCall(num);
         });
-        phoneB5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String num = phoneNums.getString("phoneN5", "");
-                makeCall(num);
-            }
+        phoneB4.setOnClickListener(v -> {
+            String num = phoneNums.getString("phoneN4", "");
+            makeCall(num);
         });
-        phoneB6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String num = phoneNums.getString("phoneN6", "");
-                makeCall(num);
-            }
+        phoneB5.setOnClickListener(v -> {
+            String num = phoneNums.getString("phoneN5", "");
+            makeCall(num);
+        });
+        phoneB6.setOnClickListener(v -> {
+            String num = phoneNums.getString("phoneN6", "");
+            makeCall(num);
         });
 
     }
@@ -183,9 +150,6 @@ public class EmergencyActivity extends AppCompatActivity {
             }
         }
     }
-
-
-
 
     public void changeEdit(int num){
         if(num==1){
@@ -243,7 +207,7 @@ public class EmergencyActivity extends AppCompatActivity {
             phone5.setEnabled(false);
             phone6.setVisibility(View.INVISIBLE);
             phone6.setEnabled(false);
-            addButton.setVisibility(View.INVISIBLE);
+            addButton.setVisibility(View.GONE);
             contact4.setVisibility(View.VISIBLE);
             contact5.setVisibility(View.VISIBLE);
             contact6.setVisibility(View.VISIBLE);
@@ -316,7 +280,7 @@ public class EmergencyActivity extends AppCompatActivity {
                 phone5.setEnabled(true);
                 phone6.setVisibility(View.VISIBLE);
                 phone6.setEnabled(true);
-                addButton.setVisibility(View.INVISIBLE);
+                addButton.setVisibility(View.GONE);
             }
         }
     }
@@ -399,6 +363,33 @@ public class EmergencyActivity extends AppCompatActivity {
         phoneNum = phoneNums.getString("phoneN"+num, "");
         phone.setText(phoneNum);
         changeEdit(1);
+    }
+
+    private void initializeButtons()
+    {
+        ImageButton homeButton = findViewById(R.id.HomeButtonA);
+        homeButton.setOnClickListener(view -> {
+            Intent intent = new Intent(EmergencyActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
+        ImageButton rehabButton = findViewById(R.id.RehabButtonA);
+        rehabButton.setOnClickListener(view -> {
+            Intent intent = new Intent(EmergencyActivity.this, RehabActivity.class);
+            startActivity(intent);
+        });
+
+        ImageButton profileButton = findViewById(R.id.ProfileButtonA);
+        profileButton.setOnClickListener(view -> {
+            Intent intent = new Intent(EmergencyActivity.this, ProfileActivity.class);
+            startActivity(intent);
+        });
+
+        ImageButton calendarButton = findViewById(R.id.CalendarButtonA);
+        calendarButton.setOnClickListener(view -> {
+            Intent intent = new Intent(EmergencyActivity.this, CalendarActivity.class);
+            startActivity(intent);
+        });
     }
 
 }

@@ -23,10 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
@@ -41,7 +39,7 @@
             android:gravity="center"
             android:text="Calendar"
             android:textColor="#5CACAF"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
@@ -52,12 +50,14 @@
             android:gravity="center"
             android:text="Click on a date to view tasks"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="14sp" />
 
         <CalendarView
             android:id="@+id/calendarView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="300dp"
+            android:scaleX=".9"
+            android:scaleY=".9" />
 
         <TextView
             android:id="@+id/tasksTitleText"
@@ -67,7 +67,7 @@
             android:fontFamily="@font/tenorsans"
             android:text="Today's Tasks"
             android:textColor="@color/calendar_dark"
-            android:textSize="20sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <TextView
@@ -75,9 +75,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sarabun"
-            android:text="Click on a task to view details"
+            android:text="Click on a task to view/edit details"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="12sp" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -100,7 +100,7 @@
                     android:padding="10dp"
                     android:text="No tasks"
                     android:textColor="#000000"
-                    android:textSize="16sp" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/lovelo"
             android:text="Add Task"
-            android:textSize="18sp"
+            android:textSize="12sp"
             app:backgroundTint="@color/calendar_dark" />
 
     </LinearLayout>
