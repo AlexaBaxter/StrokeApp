@@ -23,12 +23,12 @@
         <activity android:name=".RehabActivity" />
         <activity android:name=".WalkingActivity" />
         <activity android:name=".ArmActivity" />
-        <activity android:name=".EmergencyActivity" />
+        <activity android:name=".EmergencyActivity"
+            android:windowSoftInputMode="adjustNothing" />
         <activity android:name=".MentalActivity" />
         <activity android:name=".CalendarActivity" />
         <activity android:name=".ProfileActivity"
-            android:windowSoftInputMode="adjustNothing" >
-        </activity>
+            android:windowSoftInputMode="adjustNothing" />
         <activity android:name=".MemoryActivity" />
         <activity android:name=".LocationActivity" />
         <activity android:name=".MemoryGamesActivity" />

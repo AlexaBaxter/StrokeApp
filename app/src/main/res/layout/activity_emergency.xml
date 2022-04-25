@@ -330,6 +330,7 @@
                     android:fontFamily="@font/lovelo"
                     android:text="Button"
                     android:textSize="14sp"
+                    android:visibility="invisible"
                     app:backgroundTint="@color/blue" />
 
                 <Button
@@ -342,6 +343,7 @@
                     android:fontFamily="@font/lovelo"
                     android:text="Button"
                     android:textSize="14sp"
+                    android:visibility="invisible"
                     app:backgroundTint="@color/blue" />
 
                 <Button
@@ -355,6 +357,7 @@
                     android:text="Button"
                     android:textColorHint="@color/white"
                     android:textSize="14sp"
+                    android:visibility="invisible"
                     app:backgroundTint="@color/blue" />
 
             </RelativeLayout>
