@@ -13,16 +13,17 @@ public class MainActivity extends AppCompatActivity {
 
     public ImageButton rehabButton, homeButton, profileButton, calendarButton, mentalButton, emergencyButton, memoryButton;
 
-    private SharedPreferences sharedPref;
+    private SharedPreferences sharedPrefs;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        if(!sharedPref.getBoolean("disclaimer",false))
+        sharedPrefs = this.getPreferences(Context.MODE_PRIVATE);
+        if(!sharedPrefs.getBoolean("disclaimer",false))
         {
-            SharedPreferences.Editor editor = sharedPref.edit();
+            SharedPreferences.Editor editor = sharedPrefs.edit();
             editor.putBoolean("disclaimer",true);
             editor.apply();
             Intent intent = new Intent(MainActivity.this, AgreementPopUp.class);
