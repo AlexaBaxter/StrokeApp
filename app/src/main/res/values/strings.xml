@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">StrokeApp</string>
+    <string name="app_name">HomeHeal</string>
     <string-array name="repeat_array">
         <item>never</item>
         <item>daily</item>

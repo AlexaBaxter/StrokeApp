@@ -69,7 +69,6 @@ public class TasksManager {
             editor.putInt("notifType" + i, t.getNotifTypeNum());
             editor.putBoolean("notified" + i, t.isNotified());
         }
-
         editor.putInt("numTasks", tasks.size());
         editor.commit();
     }

@@ -108,7 +108,7 @@ public class ProfileActivity extends AppCompatActivity {
         addDrBtn.setOnClickListener(v -> {
             Doctor d = new Doctor();
             doctors.add(d);
-            createAddDoctorDialog(d, doctors.size());
+            createAddDoctorDialog(d, doctors.indexOf(d));
         });
 
         progress = ProgressManager.getInstance();
@@ -332,21 +332,27 @@ public class ProfileActivity extends AppCompatActivity {
         sendBtn.setOnClickListener(v -> {
             emailText = getText(editMessage);
             emailSubject = getText(editSubject);
-            for(Doctor d : sendTo) {
-                new Thread(() -> {
-                    try {
-                        MailSender sender = new MailSender("app.homeheal@gmail.com",
-                                "squishy_tree123");
-                        sender.sendMail(emailSubject, "Dear Dr. " + d.getName() + ",\n" + emailText,
-                                "app.homeheal@gmail.com", d.getEmail());
-                        Toast.makeText(getApplicationContext(), "Email sent!", Toast.LENGTH_SHORT).show();
-                    }
-                    catch (Exception e) {
-                        Log.e("SendMail", e.getMessage(), e);
-                    }
-                }).start();
+            if(emailText.equals("") || emailSubject.equals("") || sendTo.size() == 0) {
+                Toast.makeText(getApplicationContext(),
+                        "You must fill in all of the information above in order to send an email.",
+                        Toast.LENGTH_LONG).show();
             }
-            dialog.dismiss();
+            else {
+                for (Doctor d : sendTo) {
+                    new Thread(() -> {
+                        try {
+                            MailSender sender = new MailSender("app.homeheal@gmail.com",
+                                    "squishy_tree123");
+                            sender.sendMail(emailSubject, "Dear Dr. " + d.getName() + ",\n" + emailText,
+                                    "app.homeheal@gmail.com", d.getEmail());
+                            Toast.makeText(getApplicationContext(), "Email sent!", Toast.LENGTH_SHORT).show();
+                        } catch (Exception e) {
+                            Log.e("SendMail", e.getMessage(), e);
+                        }
+                    }).start();
+                }
+                dialog.dismiss();
+            }
         });
     }
 
@@ -400,9 +406,9 @@ public class ProfileActivity extends AppCompatActivity {
                 editor.putString("drName" + i, doctors.get(i).getName());
                 editor.putString("email" + i, doctors.get(i).getEmail());
                 editor.putString("type" + i, doctors.get(i).getType());
-                editor.putInt("number", doctors.size());
-                editor.commit();
             }
+            editor.putInt("number", doctors.size());
+            editor.commit();
             showDoctors();
             dialog.dismiss();
         });

@@ -35,17 +35,17 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/tenorsans"
             android:text="Physical Rehab"
-            android:textSize="36sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/chooseText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/sarabun"
             android:text="Choose focus area:"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -55,10 +55,10 @@
 
             <ImageButton
                 android:id="@+id/armButton"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="20dp"
                 android:background="@drawable/image_btn_coral"
                 android:scaleType="fitCenter"
                 android:tint="#FFFFFF"
@@ -66,8 +66,8 @@
 
             <ImageButton
                 android:id="@+id/walkingButton"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/image_btn_coral"
                 android:scaleType="fitCenter"

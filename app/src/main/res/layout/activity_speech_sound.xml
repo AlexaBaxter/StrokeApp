@@ -11,17 +11,22 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         android:text="Practice speaking each word, then check if your pronounciation is correct."
         app:layout_constraintBottom_toTopOf="@+id/soundTitle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxS" />
 
     <TextView
         android:id="@+id/soundTitle"
         android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
         android:background="@color/noTasks"
         android:fontFamily="@font/sarabun"
         android:gravity="center"
@@ -29,7 +34,6 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -37,27 +41,26 @@
         android:id="@+id/speakB"
         android:layout_width="95dp"
         android:layout_height="43dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginEnd="5dp"
         android:fontFamily="@font/lovelo"
         android:text="Speak"
         android:textSize="12sp"
         app:backgroundTint="@color/blue"
+        app:layout_constraintBottom_toBottomOf="@+id/soundTitle"
         app:layout_constraintEnd_toStartOf="@+id/soundTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/soundTitle" />
 
     <Button
         android:id="@+id/nextB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/lovelo"
         android:text="Next"
-        android:textSize="18sp"
+        android:textSize="12sp"
         app:backgroundTint="@color/blue"
-        app:layout_constraintStart_toEndOf="@+id/speakB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/soundTitle" />
 
     <Button
@@ -68,7 +71,7 @@
         android:layout_marginEnd="10dp"
         android:fontFamily="@font/lovelo"
         android:text="Settings"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:backgroundTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -127,7 +130,7 @@
         android:fontFamily="@font/lovelo"
         android:text="back"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:backgroundTint="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
