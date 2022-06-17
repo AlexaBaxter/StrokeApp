@@ -2,7 +2,9 @@ package com.example.strokeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -11,14 +13,22 @@ public class MainActivity extends AppCompatActivity {
 
     public ImageButton rehabButton, homeButton, profileButton, calendarButton, mentalButton, emergencyButton, memoryButton;
 
+    private SharedPreferences sharedPref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        if(!sharedPref.getBoolean("disclaimer",false))
+        {
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putBoolean("disclaimer",true);
+            editor.apply();
+            Intent intent = new Intent(MainActivity.this, AgreementPopUp.class);
+            startActivity(intent);
+        }
         initializeButtons();
-
-
     }
 
     public void initializeButtons()

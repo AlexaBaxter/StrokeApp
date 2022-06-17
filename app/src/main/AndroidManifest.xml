@@ -14,6 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StrokeApp">
+        <activity android:name=".AgreementPopUp"></activity>
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@drawable/image_btn_coral" />
@@ -26,9 +28,9 @@
         <activity android:name=".EmergencyActivity" />
         <activity android:name=".MentalActivity" />
         <activity android:name=".CalendarActivity" />
-        <activity android:name=".ProfileActivity"
-            android:windowSoftInputMode="adjustNothing" >
-        </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:windowSoftInputMode="adjustNothing"></activity>
         <activity android:name=".MemoryActivity" />
         <activity android:name=".LocationActivity" />
         <activity android:name=".MemoryGamesActivity" />
